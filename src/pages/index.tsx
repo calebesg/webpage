@@ -1,6 +1,6 @@
 import Head from "next/head"
 
-import { TrendUp } from '@phosphor-icons/react'
+import { TrendUp, Browsers, Megaphone } from '@phosphor-icons/react'
 
 import HeaderBar from "@/components/HeaderBar"
 import Container from "@/layout/Container"
@@ -54,16 +54,16 @@ export default function Home() {
                 <TrendUp className='text-green-400 mb-10' size={80} />
               </ServiceCard>
               <ServiceCard 
-                placeholder="Trafico" 
+                placeholder="Landing Page" 
                 description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi est illum" 
               >
-                <TrendUp className='text-green-400 mb-10' size={80} />
+                <Browsers className='text-green-400 mb-10' size={80} />
               </ServiceCard>
               <ServiceCard 
-                placeholder="Trafico" 
+                placeholder="Marketing" 
                 description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi est illum" 
               >
-                <TrendUp className='text-green-400 mb-10' size={80} />
+                <Megaphone className='text-green-400 mb-10' size={80} />
               </ServiceCard>
              
             </div>
