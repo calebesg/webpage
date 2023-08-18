@@ -1,10 +1,10 @@
 import Head from "next/head"
-
+import { Swiper, SwiperSlide } from "swiper/react"
 import { TrendUp, Browsers, Megaphone } from '@phosphor-icons/react'
 
 import HeaderBar from "@/components/HeaderBar"
-import Container from "@/layout/Container"
 import ServiceCard from "@/components/ServiceCard"
+import Container from "@/layout/Container"
 
 export default function Home() {
   return (
@@ -67,6 +67,28 @@ export default function Home() {
               </ServiceCard>
              
             </div>
+          </section>
+
+          {/* {PORTIFOLIO ======================================================} */}
+
+          <section className="px-6 py-14">
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="flex-1">
+                <strong className="uppercase text-gray-600 font-light tracking-[6px]"><p>portifólio</p></strong>
+                <h2 className="text-4xl font-bold text-gray-800">Cases da Empresa do Tavinho</h2>
+              </div>
+            </div>
+
+            <Swiper
+              spaceBetween={100}
+              slidesPerView={1}
+              className=""
+              modules={[]}
+              effect="coverflow"
+              onSlideChange={swiper => ()=> {}}
+            >
+
+            </Swiper>
           </section>
 
 
