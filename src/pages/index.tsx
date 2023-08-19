@@ -1,16 +1,44 @@
 import Head from "next/head"
-import Image from "next/image"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { TrendUp, Browsers, Megaphone } from '@phosphor-icons/react'
+import { useState } from 'react'
+import { useKeenSlider } from 'keen-slider/react'
+import { TrendUp, Browsers, Megaphone, CaretLeft, CaretRight } from '@phosphor-icons/react'
 
 import HeaderBar from "@/components/HeaderBar"
 import ServiceCard from "@/components/ServiceCard"
 import Container from "@/layout/Container"
-
-import siteImg01 from '../../public/img/01.jpeg'
-import siteImg02 from '../../public/img/03.jpeg'
+import { ParterCard } from "@/components/PartnerCard"
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDialogElement>({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
+    },
+    created() {
+      setLoaded(true)
+    },
+    breakpoints: {
+      '(min-width: 400px)': {
+        slides: { perView: 1, spacing: 32 },
+      },
+      '(min-width: 600px)': {
+        slides: { perView: 2, spacing: 32 },
+      },
+      '(min-width: 800px)': {
+        slides: { perView: 3, spacing: 32 },
+      },
+      '(min-width: 1000px)': {
+        slides: { perView: 4, spacing: 32 },
+      },
+      '(min-width: 1200px)': {
+        slides: { perView: 4, spacing: 32 },
+      },
+    },
+    slides: { perView: 1, spacing: 16 }
+  })
+
   return (
     <>
       <Head>
@@ -22,8 +50,8 @@ export default function Home() {
       <main>
         <Container>
           {/* {BANNER ==================================================} */}
-          <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:w-full after:h-full after:bg-black/40 after:backdrop-blur-sm after:left-0 after:-z-20">
-            <section className="w-full md:w-[50%]">
+          <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:inset-0 after:bg-gradient-to-t">
+            <section className="w-full md:w-[50%] z-50">
               <h1 className="text-white font-bold text-5xl leading-tight text-center md:text-left">
                 Levando seu comercio para o próximo <span className="text-green-400">Nível</span>
               </h1>
@@ -83,45 +111,43 @@ export default function Home() {
               </div>
             </div>
 
-            <Swiper
-              spaceBetween={140}
-              slidesPerView={4}
-              className="mt-16"
-              modules={[]}
-              effect="coverflow"
-              onSlideChange={swiper => ()=> {}}
-            >
-              <SwiperSlide>
-                <div className="relative z-10 w-80 h-96 rounded-2xl overflow-hidden cursor-pointer">
-                  <Image src={siteImg01} className="h-full object-cover " alt="" />
-
-                  <div className="absolute inset-0 bg-gradient-to-t flex flex-col items-center justify-center opacity-0 hover:opacity-100 duration-200 transition">
-                    <strong className="text-white text-4xl">Apple</strong>
-                    <span className="text-gray-300 text-center mt-4">Parceiros da Apple aprovam os resultados obtidos!</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="relative z-10 w-80 h-96 rounded-2xl overflow-hidden cursor-pointer">
-                  <Image src={siteImg01} className="h-full object-cover " alt="" />
-
-                  <div className="absolute inset-0 bg-gradient-to-t flex flex-col items-center justify-center opacity-0 hover:opacity-100 duration-200 transition">
-                    <strong className="text-white text-4xl">Apple</strong>
-                    <span className="text-gray-300 text-center mt-4">Parceiros da Apple aprovam os resultados obtidos!</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="relative z-10 w-80 h-96 rounded-2xl overflow-hidden cursor-pointer">
-                  <Image src={siteImg01} className="h-full object-cover " alt="" />
-
-                  <div className="absolute inset-0 bg-gradient-to-t flex flex-col items-center justify-center opacity-0 hover:opacity-100 duration-200 transition">
-                    <strong className="text-white text-4xl">Apple</strong>
-                    <span className="text-gray-300 text-center mt-4">Parceiros da Apple aprovam os resultados obtidos!</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
+            <div className="w-full px-4 md:px-0 navigation-wrapper relative">
+              <div ref={sliderRef as any} className="keen-slider mt-20">
+                {/* {games.map(game => (
+                  <GameBanner
+                    key={game.id}
+                    adsCount={game._count.ads}
+                    bannerUrl={game.imageUrl}
+                    title={game.name}
+                  />
+                ))} */}
+                <ParterCard />
+                <ParterCard />
+                <ParterCard />
+                <ParterCard />
+              </div>
+              {loaded && instanceRef.current && (
+                <>
+                  <button
+                    className="arrow arrow--left absolute top-1/2 left-6 bg-black/80 md:-left-14 w-12 h-12 rounded-full translate-x-16 z-50"
+                    onClick={(e: any) =>
+                      e.stopPropagation() || instanceRef.current?.prev()
+                    }
+                  >
+                    <CaretLeft size={42} color="#fff" width="bold" />
+                  </button>
+                  <button
+                    className="arrow arrow--right absolute top-1/2 right-6 bg-black/80 md:-right-14 w-12 h-12 rounded-full -translate-x-16 z-50"
+                    onClick={(e: any) =>
+                      e.stopPropagation() || instanceRef.current?.next()
+                    }
+                  >
+                    <CaretRight size={42} color="#fff" width="bold" />
+                  </button>
+                </>
+              )}
+            </div>
+           
           </section>
 
 

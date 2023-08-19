@@ -8,7 +8,7 @@ const config: Config = {
       'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      'gradient-to-t': 'linear-gradient(0deg, #010101, #ffffff00)'
+      'gradient-to-t': 'linear-gradient(0deg, #131313, #ffffff00)'
     },
     maxWidth: {
       'xxxl': "1920px"
