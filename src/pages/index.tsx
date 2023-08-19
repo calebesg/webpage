@@ -1,10 +1,14 @@
 import Head from "next/head"
+import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { TrendUp, Browsers, Megaphone } from '@phosphor-icons/react'
 
 import HeaderBar from "@/components/HeaderBar"
 import ServiceCard from "@/components/ServiceCard"
 import Container from "@/layout/Container"
+
+import siteImg01 from '../../public/img/01.jpeg'
+import siteImg02 from '../../public/img/03.jpeg'
 
 export default function Home() {
   return (
@@ -71,23 +75,52 @@ export default function Home() {
 
           {/* {PORTIFOLIO ======================================================} */}
 
-          <section className="px-6 py-14">
+          <section className="px-6 py-14 bg-gray-900 mt-8">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
-                <strong className="uppercase text-gray-600 font-light tracking-[6px]"><p>portifólio</p></strong>
-                <h2 className="text-4xl font-bold text-gray-800">Cases da Empresa do Tavinho</h2>
+                <strong className="uppercase text-gray-300 font-light tracking-[6px]"><p>portifólio</p></strong>
+                <h2 className="text-4xl font-bold text-gray-100">Cases da Empresa do Tavinho</h2>
               </div>
             </div>
 
             <Swiper
-              spaceBetween={100}
-              slidesPerView={1}
-              className=""
+              spaceBetween={140}
+              slidesPerView={4}
+              className="mt-16"
               modules={[]}
               effect="coverflow"
               onSlideChange={swiper => ()=> {}}
             >
+              <SwiperSlide>
+                <div className="relative z-10 w-80 h-96 rounded-2xl overflow-hidden cursor-pointer">
+                  <Image src={siteImg01} className="h-full object-cover " alt="" />
 
+                  <div className="absolute inset-0 bg-gradient-to-t flex flex-col items-center justify-center opacity-0 hover:opacity-100 duration-200 transition">
+                    <strong className="text-white text-4xl">Apple</strong>
+                    <span className="text-gray-300 text-center mt-4">Parceiros da Apple aprovam os resultados obtidos!</span>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative z-10 w-80 h-96 rounded-2xl overflow-hidden cursor-pointer">
+                  <Image src={siteImg01} className="h-full object-cover " alt="" />
+
+                  <div className="absolute inset-0 bg-gradient-to-t flex flex-col items-center justify-center opacity-0 hover:opacity-100 duration-200 transition">
+                    <strong className="text-white text-4xl">Apple</strong>
+                    <span className="text-gray-300 text-center mt-4">Parceiros da Apple aprovam os resultados obtidos!</span>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative z-10 w-80 h-96 rounded-2xl overflow-hidden cursor-pointer">
+                  <Image src={siteImg01} className="h-full object-cover " alt="" />
+
+                  <div className="absolute inset-0 bg-gradient-to-t flex flex-col items-center justify-center opacity-0 hover:opacity-100 duration-200 transition">
+                    <strong className="text-white text-4xl">Apple</strong>
+                    <span className="text-gray-300 text-center mt-4">Parceiros da Apple aprovam os resultados obtidos!</span>
+                  </div>
+                </div>
+              </SwiperSlide>
             </Swiper>
           </section>
 
