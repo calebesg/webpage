@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Image from "next/image"
 import { useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import { TrendUp, Browsers, Megaphone, CaretLeft, CaretRight } from '@phosphor-icons/react'
@@ -7,6 +8,8 @@ import HeaderBar from "@/components/HeaderBar"
 import ServiceCard from "@/components/ServiceCard"
 import Container from "@/layout/Container"
 import { ParterCard } from "@/components/PartnerCard"
+
+import aboutImg from '../../public/img/about.png'
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
@@ -71,7 +74,7 @@ export default function Home() {
                 <strong className="uppercase text-gray-600 font-light tracking-[6px]">Serviços</strong>
                 <h2 className="text-4xl font-bold text-gray-800">O que podemos fazer por você</h2>
               </div>
-              <p className="w-full md:w-[42%] text-gray-800 font-semibold">
+              <p className="w-full md:w-[42%] text-gray-800 text-lg font-semibold">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                 Sequi est illum delectus sit, libero dolores quia unde impedit 
                 omnis animi praesentium eum quisquam perspiciatis aliquam et ipsa fugit. Eos, sed.
@@ -125,6 +128,8 @@ export default function Home() {
                 <ParterCard />
                 <ParterCard />
                 <ParterCard />
+                <ParterCard />
+                <ParterCard />
               </div>
               {loaded && instanceRef.current && (
                 <>
@@ -150,7 +155,33 @@ export default function Home() {
            
           </section>
 
+          {/* {ABOUT ============================================================} */}
+          <section className="relative mt-28 bg-gray-900 w-2/3 min-h-[30rem] ml-auto mr-8 py-16 rounded-lg flex justify-end gap-8">
+            <Image 
+              src={aboutImg} 
+              alt=""
+              className="w-72 rounded-lg absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2"
+            />
 
+            <main className="self-center w-2/3 px-10">
+              <h2 className="text-white text-4xl font-semibold">Quem Somos.</h2>
+              <p className="text-gray-300 text-lg mt-8 leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Recusandae consequatur consectetur harum praesentium veritatis incidunt itaque modi, 
+                voluptatum nobis ad quo illo deleniti sint ipsa placeat ex commodi vero. Ratione.
+              </p>
+              <p className="text-gray-300 text-lg mt-8 leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Recusandae consequatur consectetur harum praesentium veritatis incidunt itaque modi, 
+                voluptatum nobis ad quo illo deleniti sint ipsa placeat ex commodi vero. Ratione.
+              </p>
+              <p className="text-gray-300 text-lg mt-8 leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Recusandae consequatur consectetur harum praesentium veritatis incidunt itaque modi, 
+                voluptatum nobis ad quo illo deleniti sint ipsa placeat ex commodi vero. Ratione.
+              </p>
+            </main>
+          </section>
         </Container>
       </main>
     </>
