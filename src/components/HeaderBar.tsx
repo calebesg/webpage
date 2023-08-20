@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeaderBar() {
 	return (
-		<header className="w-full bg-gray-800 border-b-2 border-gray-500">
+		<header className="w-full bg-zinc-800 border-b-2 border-zinc-500">
       <Container>
         <div className="h-24 lg:h-20 px-6 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6">
           <Link className="uppercase text-white text-xl font-bold" href="/" passHref>

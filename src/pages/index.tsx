@@ -10,6 +10,7 @@ import Container from "@/layout/Container"
 import { ParterCard } from "@/components/PartnerCard"
 
 import aboutImg from '../../public/img/about.png'
+import { Footer } from "@/components/Footer"
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
@@ -53,7 +54,7 @@ export default function Home() {
       <main>
         <Container>
           {/* {BANNER ==================================================} */}
-          <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:inset-0 after:bg-gradient-to-t">
+          <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover bg-center m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:inset-0 after:bg-gradient-to-t">
             <section className="w-full md:w-[50%] z-50">
               <h1 className="text-white font-bold text-5xl leading-tight text-center md:text-left">
                 Levando seu comercio para o próximo <span className="text-green-400">Nível</span>
@@ -106,7 +107,7 @@ export default function Home() {
 
           {/* {PORTIFOLIO ======================================================} */}
 
-          <section className="px-6 py-14 bg-gray-900 mt-8">
+          <section className="px-6 py-14 bg-zinc-800 mt-8">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
                 <strong className="uppercase text-gray-300 font-light tracking-[6px]"><p>portifólio</p></strong>
@@ -156,7 +157,7 @@ export default function Home() {
           </section>
 
           {/* {ABOUT ============================================================} */}
-          <section className="relative mt-28 bg-gray-900 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
+          <section className="relative mt-28 bg-zinc-800 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
             <Image 
               src={aboutImg} 
               alt=""
@@ -174,6 +175,8 @@ export default function Home() {
           </section>
         </Container>
       </main>
+
+      <Footer />
     </>
   )
 }
