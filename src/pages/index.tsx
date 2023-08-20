@@ -156,30 +156,20 @@ export default function Home() {
           </section>
 
           {/* {ABOUT ============================================================} */}
-          <section className="relative mt-28 bg-gray-900 w-2/3 min-h-[30rem] ml-auto mr-8 py-16 rounded-lg flex justify-end gap-8">
+          <section className="relative mt-28 bg-gray-900 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
             <Image 
               src={aboutImg} 
               alt=""
-              className="w-72 rounded-lg absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2"
+              className="w-52 md:w-72 rounded-lg lg:absolute lg:left-0 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2"
             />
 
-            <main className="self-center w-2/3 px-10">
-              <h2 className="text-white text-4xl font-semibold">Quem Somos.</h2>
-              <p className="text-gray-300 text-lg mt-8 leading-relaxed">
+            <main className="lg:self-center lg:w-2/3 px-10">
+              <h2 className="text-white text-2xl lg:text-4xl text-center lg:text-left font-semibold">Quem Somos.</h2>
+              <p className="text-gray-300 md:text-lg text-center lg:text-left mt-8 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                 Recusandae consequatur consectetur harum praesentium veritatis incidunt itaque modi, 
                 voluptatum nobis ad quo illo deleniti sint ipsa placeat ex commodi vero. Ratione.
-              </p>
-              <p className="text-gray-300 text-lg mt-8 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Recusandae consequatur consectetur harum praesentium veritatis incidunt itaque modi, 
-                voluptatum nobis ad quo illo deleniti sint ipsa placeat ex commodi vero. Ratione.
-              </p>
-              <p className="text-gray-300 text-lg mt-8 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Recusandae consequatur consectetur harum praesentium veritatis incidunt itaque modi, 
-                voluptatum nobis ad quo illo deleniti sint ipsa placeat ex commodi vero. Ratione.
-              </p>
+              </p>      
             </main>
           </section>
         </Container>
