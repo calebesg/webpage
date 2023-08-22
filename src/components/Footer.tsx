@@ -1,6 +1,6 @@
-import { FacebookLogo, WhatsappLogo } from "@phosphor-icons/react";
-import { Logo } from "./Logo";
-import Container from "@/components/Container";
+import { FacebookLogo, WhatsappLogo } from '@phosphor-icons/react'
+import { Logo } from './Logo'
+import Container from '@/components/Container'
 
 export function Footer() {
   return (

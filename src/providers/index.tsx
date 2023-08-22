@@ -8,11 +8,9 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
-  return(
+  return (
     <CacheProvider>
-      <ChakraProvider>
-        {children}
-      </ChakraProvider>
+      <ChakraProvider>{children}</ChakraProvider>
     </CacheProvider>
   )
 }

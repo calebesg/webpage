@@ -1,41 +1,51 @@
 import { useRef, useState } from 'react'
-import { List } from '@phosphor-icons/react';
-import { Drawer, DrawerOverlay, DrawerContent, DrawerBody, DrawerCloseButton } from '@chakra-ui/react'
+import { List } from '@phosphor-icons/react'
+import {
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
+  DrawerCloseButton,
+} from '@chakra-ui/react'
 
-import { NavOptions } from './NavOptions';
+import { NavOptions } from './NavOptions'
 
 export function MenuMobile() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const buttonMenuRef = useRef(null)
 
   function handleVisibilitMenu() {
-    setIsOpen(oldValue => !oldValue)
+    setIsOpen((oldValue) => !oldValue)
   }
 
   return (
     <>
-      <button 
+      <button
         ref={buttonMenuRef}
-        onClick={ handleVisibilitMenu }
-        className='text-white lg:hidden'
+        onClick={handleVisibilitMenu}
+        className="text-white lg:hidden"
       >
         <List size={32} />
       </button>
 
       <Drawer
         isOpen={isOpen}
-        onClose={ handleVisibilitMenu }
+        onClose={handleVisibilitMenu}
         finalFocusRef={buttonMenuRef}
-        placement='left'
+        placement="left"
       >
         <DrawerOverlay />
-        
+
         <DrawerContent>
           <DrawerCloseButton left={6} />
 
           <DrawerBody>
-            <NavOptions text='dark' direction='col' />
+            <NavOptions
+              text="dark"
+              direction="col"
+              callbackOnClickLink={handleVisibilitMenu}
+            />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
