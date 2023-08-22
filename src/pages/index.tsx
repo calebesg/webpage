@@ -6,11 +6,12 @@ import { TrendUp, Browsers, Megaphone, CaretLeft, CaretRight } from '@phosphor-i
 
 import HeaderBar from "@/components/HeaderBar"
 import ServiceCard from "@/components/ServiceCard"
-import Container from "@/layout/Container"
+import Container from "@/components/Container"
 import { ParterCard } from "@/components/PartnerCard"
+import { Footer } from "@/components/Footer"
+import { MenuMobile } from "@/components/MenuMobile"
 
 import aboutImg from '../../public/img/about.png'
-import { Footer } from "@/components/Footer"
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
@@ -45,6 +46,7 @@ export default function Home() {
 
   return (
     <>
+
       <Head>
         <title>Tavinho</title>
       </Head>
