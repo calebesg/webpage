@@ -115,8 +115,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-full px-4 md:px-0 navigation-wrapper relative">
-              <div ref={sliderRef as any} className="keen-slider mt-20">
+            <div className="w-full mt-16 px-4 md:px-0 navigation-wrapper relative">
+              <div ref={sliderRef as any} className="keen-slider">
                 {/* {games.map(game => (
                   <GameBanner
                     key={game.id}
@@ -133,24 +133,24 @@ export default function Home() {
                 <ParterCard />
               </div>
               {loaded && instanceRef.current && (
-                <>
+                <div className="flex justify-center gap-4 mt-8">
                   <button
-                    className="arrow arrow--left absolute top-1/2 -left-0 lg:-left-10 md:-left-14 w-12 h-12 bg-black/80 rounded-full -translate-x-1/2 md:translate-x-16 z-40"
+                    className="w-10 h-10 bg-black/80 rounded-full"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.prev()
                     }
                   >
-                    <CaretLeft size={42} color="#fff" width="bold" />
+                    <CaretLeft size={32} color="#fff" width="bold" />
                   </button>
                   <button
-                    className="arrow arrow--right absolute top-1/2 -right-0 lg:-right-10 bg-black/80 md:-right-14 w-12 h-12 rounded-full translate-x-1/2 md:-translate-x-16 z-40"
+                    className="w-10 h-10 bg-black/80 rounded-full"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.next()
                     }
                   >
-                    <CaretRight size={42} color="#fff" width="bold" />
+                    <CaretRight size={32} color="#fff" width="bold" />
                   </button>
-                </>
+                </div>
               )}
             </div>
            
