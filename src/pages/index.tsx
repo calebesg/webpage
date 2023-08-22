@@ -51,7 +51,7 @@ export default function Home() {
 
       <HeaderBar />
 
-      <main>
+      <main className="pt-20">
         <Container>
           {/* {BANNER ==================================================} */}
           <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover bg-center m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:inset-0 after:bg-gradient-to-t">
@@ -60,7 +60,7 @@ export default function Home() {
                 Levando seu comercio para o próximo <span className="text-green-400">Nível</span>
               </h1>
               
-              <p className="text-gray-300 text-lg md:pr-20 text-center mt-4 leading-8 md:text-left">
+              <p className="text-zinc-300 text-lg md:pr-20 text-center mt-4 leading-8 md:text-left">
                 Aqui trabalhamos em varias frentes para 
                 tornar seu emprendimento vísivel para o maximo de clientes
               </p>
@@ -72,10 +72,10 @@ export default function Home() {
           <section className="px-6 py-14">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
-                <strong className="uppercase text-gray-600 font-light tracking-[6px]">Serviços</strong>
-                <h2 className="text-4xl font-bold text-gray-800">O que podemos fazer por você</h2>
+                <strong className="uppercase text-zinc-600 font-light tracking-[6px]">Serviços</strong>
+                <h2 className="text-4xl font-bold text-zinc-700">O que podemos fazer por você</h2>
               </div>
-              <p className="w-full md:w-[42%] text-gray-800 text-lg font-semibold">
+              <p className="w-full md:w-[42%] text-zinc-600 text-lg font-semibold">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                 Sequi est illum delectus sit, libero dolores quia unde impedit 
                 omnis animi praesentium eum quisquam perspiciatis aliquam et ipsa fugit. Eos, sed.
@@ -110,8 +110,8 @@ export default function Home() {
           <section className="px-6 py-14 bg-zinc-800 mt-8">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
-                <strong className="uppercase text-gray-300 font-light tracking-[6px]"><p>portifólio</p></strong>
-                <h2 className="text-4xl font-bold text-gray-100">Cases da Empresa do Tavinho</h2>
+                <strong className="uppercase text-zinc-200 font-light tracking-[6px]"><p>portifólio</p></strong>
+                <h2 className="text-4xl font-bold text-white">Cases da Empresa do Tavinho</h2>
               </div>
             </div>
 
@@ -135,7 +135,7 @@ export default function Home() {
               {loaded && instanceRef.current && (
                 <>
                   <button
-                    className="arrow arrow--left absolute top-1/2 left-6 bg-black/80 md:-left-14 w-12 h-12 rounded-full translate-x-16 z-50"
+                    className="arrow arrow--left absolute top-1/2 -left-0 lg:-left-10 md:-left-14 w-12 h-12 bg-black/80 rounded-full -translate-x-1/2 md:translate-x-16 z-40"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.prev()
                     }
@@ -143,7 +143,7 @@ export default function Home() {
                     <CaretLeft size={42} color="#fff" width="bold" />
                   </button>
                   <button
-                    className="arrow arrow--right absolute top-1/2 right-6 bg-black/80 md:-right-14 w-12 h-12 rounded-full -translate-x-16 z-50"
+                    className="arrow arrow--right absolute top-1/2 -right-0 lg:-right-10 bg-black/80 md:-right-14 w-12 h-12 rounded-full translate-x-1/2 md:-translate-x-16 z-40"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.next()
                     }
@@ -166,7 +166,7 @@ export default function Home() {
 
             <main className="lg:self-center lg:w-2/3 px-10">
               <h2 className="text-white text-2xl lg:text-4xl text-center lg:text-left font-semibold">Quem Somos.</h2>
-              <p className="text-gray-300 md:text-lg text-center lg:text-left mt-8 leading-relaxed">
+              <p className="text-zinc-300 md:text-lg text-center lg:text-left mt-8 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                 Recusandae consequatur consectetur harum praesentium veritatis incidunt itaque modi, 
                 voluptatum nobis ad quo illo deleniti sint ipsa placeat ex commodi vero. Ratione.
