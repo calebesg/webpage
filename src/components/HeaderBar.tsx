@@ -11,10 +11,10 @@ export default function HeaderBar() {
           </Link>
 
           <nav className="flex items-center gap-4 text-white/90 font-semibold">
-            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="">Home</Link>
-            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="">Serviços</Link>
-            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="">Portifólio</Link>
-            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="">Sobre</Link>
+            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="/">Home</Link>
+            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="#services">Serviços</Link>
+            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="#portifolio">Portifólio</Link>
+            <Link className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors" href="#about">Sobre</Link>
           </nav>
         </div>
       </Container>

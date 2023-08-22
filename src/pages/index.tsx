@@ -68,7 +68,7 @@ export default function Home() {
           </div>
 
           {/* {SERVIÇOS ===================================================} */}
-
+          <span id="services"></span>
           <section className="px-6 py-14">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
@@ -106,7 +106,7 @@ export default function Home() {
           </section>
 
           {/* {PORTIFOLIO ======================================================} */}
-
+          <span id="portifolio"></span>
           <section className="px-6 py-14 bg-zinc-800 mt-8">
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
@@ -157,6 +157,7 @@ export default function Home() {
           </section>
 
           {/* {ABOUT ============================================================} */}
+          <span id="about"></span>
           <section className="relative mt-28 bg-zinc-800 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
             <Image 
               src={aboutImg} 
