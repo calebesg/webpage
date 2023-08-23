@@ -9,6 +9,8 @@ const config: Config = {
       'gradient-conic':
         'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       'gradient-to-t': 'linear-gradient(0deg, #131313, #ffffff00)',
+      'gradient-to-r':
+        'linear-gradient(90deg, #27272a, #27272a, #27272a, #ffffff00)',
     },
     maxWidth: {
       xxxl: '1920px',

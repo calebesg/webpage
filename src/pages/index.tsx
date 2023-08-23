@@ -8,6 +8,9 @@ import {
   Megaphone,
   CaretLeft,
   CaretRight,
+  Chat,
+  WhatsappLogo,
+  EnvelopeSimple,
 } from '@phosphor-icons/react'
 
 import HeaderBar from '@/components/HeaderBar'
@@ -17,6 +20,7 @@ import { ParterCard } from '@/components/PartnerCard'
 import { Footer } from '@/components/Footer'
 
 import aboutImg from '../../public/img/about.png'
+import contactImg from '../../public/img/contact.jpg'
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
@@ -172,7 +176,7 @@ export default function Home() {
 
           {/* {ABOUT ============================================================} */}
           <span id="about"></span>
-          <section className="relative mt-28 bg-zinc-800 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
+          <section className="relative my-28 bg-zinc-800 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
             <Image
               src={aboutImg}
               alt=""
@@ -190,6 +194,76 @@ export default function Home() {
                 ipsa placeat ex commodi vero. Ratione.
               </p>
             </main>
+          </section>
+
+          <section className="flex justify-between bg-zinc-800 mt-8 relative after:absolute after:inset-0 after:bg-gradient-to-r after:z-20">
+            <div className="z-50 flex flex-col px-8 py-12">
+              <h2 className="text-white text-2xl font-bold">
+                Como nos encontrar?
+              </h2>
+
+              <div className="flex gap-8 mt-8">
+                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8">
+                  <Chat className="text-4xl text-green-400" />
+
+                  <span className="font-Poppins font-black text-xl text-zinc-700 mt-8">
+                    Fale Conosco
+                  </span>
+                  <span className="text-zinc-600">
+                    Entre em contado e faça um orçamento já!
+                  </span>
+
+                  <ul className="w-full mt-8 flex flex-col gap-2">
+                    <a href="#" className="flex items-center gap-2">
+                      <WhatsappLogo />
+                      <span>+55 629920000</span>
+                    </a>
+
+                    <a href="#" className="flex items-center gap-2">
+                      <EnvelopeSimple />
+                      <span>institutional_email@gmail.com</span>
+                    </a>
+                  </ul>
+                </div>
+
+                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8">
+                  <Chat className="text-4xl text-green-400" />
+
+                  <span className="font-Poppins font-black text-xl text-zinc-700 mt-8">
+                    Nossas redes
+                  </span>
+                  <span className="text-zinc-600 text-center w-64 ">
+                    Acompanhe nossas redes e fique por dentro de tudo que
+                    estamos promovendo
+                  </span>
+
+                  <ul className="w-full mt-8 flex flex-col gap-2">
+                    <a
+                      href="#"
+                      onClick={() =>
+                        window.open(
+                          `https://web.whatsapp.com/send?phone=${'+5564992534500'}`
+                        )
+                      }
+                      className="flex items-center gap-2"
+                    >
+                      <WhatsappLogo />
+                      <span>+55 629920000</span>
+                    </a>
+
+                    <a href="#" className="flex items-center gap-2">
+                      <EnvelopeSimple />
+                      <span>institutional_email@gmail.com</span>
+                    </a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <Image
+              src={contactImg}
+              className="w-2/4 h-[500px] object-cover object-left-bottom"
+              alt="Telefone antigo"
+            />
           </section>
         </Container>
       </main>

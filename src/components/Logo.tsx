@@ -1,8 +1,19 @@
 import Link from 'next/link'
 
-export function Logo() {
+interface LogoProps {
+  color: 'ligth' | 'dark'
+}
+
+export function Logo({ color }: LogoProps) {
   return (
-    <Link className="uppercase text-white text-xl font-bold" href="/" passHref>
+    <Link
+      className={`
+        uppercase text-xl font-bold
+        ${color === 'dark' ? 'text-zinc-800' : 'text-white'}
+      `}
+      href="/"
+      passHref
+    >
       Logo
     </Link>
   )
