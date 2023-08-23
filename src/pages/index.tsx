@@ -57,12 +57,12 @@ export default function Home() {
 
       <HeaderBar />
 
-      <main className="pt-20">
+      <main className="pt-20 font-sans">
         <Container>
           {/* {BANNER ==================================================} */}
           <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover bg-center m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:inset-0 after:bg-gradient-to-t">
             <section className="w-full md:w-[50%] z-50">
-              <h1 className="text-white font-bold text-5xl leading-tight text-center md:text-left">
+              <h1 className="text-white font-Poppins font-bold text-5xl leading-tight text-center md:text-left">
                 Levando seu comercio para o próximo{' '}
                 <span className="text-green-400">Nível</span>
               </h1>
@@ -82,7 +82,7 @@ export default function Home() {
                 <strong className="uppercase text-zinc-600 font-light tracking-[6px]">
                   Serviços
                 </strong>
-                <h2 className="text-4xl font-bold text-zinc-700">
+                <h2 className="text-4xl font-Poppins font-bold text-zinc-700">
                   O que podemos fazer por você
                 </h2>
               </div>
@@ -124,7 +124,7 @@ export default function Home() {
                 <strong className="uppercase text-zinc-200 font-light tracking-[6px]">
                   <p>portifólio</p>
                 </strong>
-                <h2 className="text-4xl font-bold text-white">
+                <h2 className="text-4xl font-Poppins font-bold text-white">
                   Projetos lançados
                 </h2>
               </div>
@@ -150,7 +150,7 @@ export default function Home() {
               {loaded && instanceRef.current && (
                 <div className="flex justify-center gap-4 mt-8">
                   <button
-                    className="w-10 h-10 bg-black/80 rounded-full"
+                    className="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.prev()
                     }
@@ -158,7 +158,7 @@ export default function Home() {
                     <CaretLeft size={32} color="#fff" width="bold" />
                   </button>
                   <button
-                    className="w-10 h-10 bg-black/80 rounded-full"
+                    className="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.next()
                     }
@@ -180,7 +180,7 @@ export default function Home() {
             />
 
             <main className="lg:self-center lg:w-2/3 px-10">
-              <h2 className="text-white text-2xl lg:text-4xl text-center lg:text-left font-semibold">
+              <h2 className="text-white text-2xl lg:text-4xl text-center lg:text-left  font-Poppins font-bold">
                 Quem Somos.
               </h2>
               <p className="text-zinc-300 md:text-lg text-center lg:text-left mt-8 leading-relaxed">
