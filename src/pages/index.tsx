@@ -12,6 +12,8 @@ import {
   WhatsappLogo,
   EnvelopeSimple,
   InstagramLogo,
+  ArrowRight,
+  ArrowLeft,
 } from '@phosphor-icons/react'
 
 import HeaderBar from '@/components/HeaderBar'
@@ -68,7 +70,7 @@ export default function Home() {
           {/* {BANNER ==================================================} */}
           <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover bg-center m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:inset-0 after:bg-gradient-to-t">
             <section className="w-full md:w-[50%] z-50">
-              <h1 className="text-white font-Poppins font-bold text-5xl leading-tight text-center md:text-left">
+              <h1 className="text-white font-Poppins font-bold text-4xl lg:text-5xl leading-tight text-center md:text-left">
                 Levando seu comercio para o próximo{' '}
                 <span className="text-green-400">Nível</span>
               </h1>
@@ -130,7 +132,7 @@ export default function Home() {
                 <strong className="uppercase text-zinc-200 font-light tracking-[6px]">
                   <p>portifólio</p>
                 </strong>
-                <h2 className="text-4xl font-Poppins font-bold text-white">
+                <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-white">
                   Projetos lançados
                 </h2>
               </div>
@@ -154,22 +156,24 @@ export default function Home() {
                 <ParterCard />
               </div>
               {loaded && instanceRef.current && (
-                <div className="flex justify-center gap-4 mt-8">
+                <div className="flex justify-between gap-8 mt-8">
                   <button
-                    className="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center"
+                    className="flex items-center justify-center text-white/70 hover:text-white"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.prev()
                     }
+                    aria-label="Voltar slide"
                   >
-                    <CaretLeft size={32} color="#fff" width="bold" />
+                    <ArrowLeft size={36} width="bold" />
                   </button>
                   <button
-                    className="w-10 h-10 bg-black/80 rounded-full flex items-center justify-center"
+                    className="flex items-center justify-center text-white/70 hover:text-white"
                     onClick={(e: any) =>
                       e.stopPropagation() || instanceRef.current?.next()
                     }
+                    aria-label="Próximo slide"
                   >
-                    <CaretRight size={32} color="#fff" width="bold" />
+                    <ArrowRight size={36} width="bold" />
                   </button>
                 </div>
               )}
@@ -198,6 +202,7 @@ export default function Home() {
             </main>
           </section>
 
+          {/* {CONTATO ==========================================================} */}
           <section className="bg-gradient-to-b lg:bg-gradient-to-r mt-8 relative overflow-hidden">
             <div className="flex flex-col px-8 py-12">
               <h2 className="text-white text-2xl font-bold">
