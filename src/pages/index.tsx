@@ -11,6 +11,7 @@ import {
   Chat,
   WhatsappLogo,
   EnvelopeSimple,
+  InstagramLogo,
 } from '@phosphor-icons/react'
 
 import HeaderBar from '@/components/HeaderBar'
@@ -21,6 +22,7 @@ import { Footer } from '@/components/Footer'
 
 import aboutImg from '../../public/img/about.png'
 import contactImg from '../../public/img/contact.jpg'
+import socialImg from '../../public/img/social.jpg'
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
@@ -196,72 +198,66 @@ export default function Home() {
             </main>
           </section>
 
-          <section className="flex justify-between bg-zinc-800 mt-8 relative after:absolute after:inset-0 after:bg-gradient-to-r after:z-20">
-            <div className="z-50 flex flex-col px-8 py-12">
+          <section className="bg-gradient-to-b lg:bg-gradient-to-r mt-8 relative overflow-hidden">
+            <div className="flex flex-col px-8 py-12">
               <h2 className="text-white text-2xl font-bold">
                 Como nos encontrar?
               </h2>
 
-              <div className="flex gap-8 mt-8">
-                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8">
+              <div className="flex flex-col lg:flex-row gap-8 mt-8 ">
+                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8 z-50">
                   <Chat className="text-4xl text-green-400" />
 
                   <span className="font-Poppins font-black text-xl text-zinc-700 mt-8">
                     Fale Conosco
                   </span>
-                  <span className="text-zinc-600">
+                  <span className="text-zinc-600 text-center text-sm mt-4 w-64">
                     Entre em contado e faça um orçamento já!
                   </span>
 
                   <ul className="w-full mt-8 flex flex-col gap-2">
-                    <a href="#" className="flex items-center gap-2">
-                      <WhatsappLogo />
-                      <span>+55 629920000</span>
+                    <a
+                      href="//api.whatsapp.com/send?phone=64992534500"
+                      className="flex items-center gap-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WhatsappLogo size={20} />
+                      <span>(62)9920000-00</span>
                     </a>
 
-                    <a href="#" className="flex items-center gap-2">
-                      <EnvelopeSimple />
+                    <a
+                      href="mailto:institutional_email@gmail.com"
+                      className="flex items-center gap-2"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <EnvelopeSimple size={20} />
                       <span>institutional_email@gmail.com</span>
                     </a>
                   </ul>
                 </div>
 
-                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8">
-                  <Chat className="text-4xl text-green-400" />
+                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8 z-50">
+                  <InstagramLogo className="text-5xl text-pink-500" />
 
                   <span className="font-Poppins font-black text-xl text-zinc-700 mt-8">
-                    Nossas redes
+                    Instagram
                   </span>
-                  <span className="text-zinc-600 text-center w-64 ">
-                    Acompanhe nossas redes e fique por dentro de tudo que
-                    estamos promovendo
+                  <span className="text-zinc-600 text-center text-sm mt-4 w-64 ">
+                    Sigua nossa página oficial e fique por dentro de todas as
+                    novidades!
                   </span>
 
-                  <ul className="w-full mt-8 flex flex-col gap-2">
-                    <a
-                      href="#"
-                      onClick={() =>
-                        window.open(
-                          `https://web.whatsapp.com/send?phone=${'+5564992534500'}`
-                        )
-                      }
-                      className="flex items-center gap-2"
-                    >
-                      <WhatsappLogo />
-                      <span>+55 629920000</span>
-                    </a>
-
-                    <a href="#" className="flex items-center gap-2">
-                      <EnvelopeSimple />
-                      <span>institutional_email@gmail.com</span>
-                    </a>
-                  </ul>
+                  <button className="bg-gradient-instagram px-8 py-2 rounded-full mt-6 text-white">
+                    Acesse Já
+                  </button>
                 </div>
               </div>
             </div>
             <Image
-              src={contactImg}
-              className="w-2/4 h-[500px] object-cover object-left-bottom"
+              src={socialImg}
+              className="absolute w-full lg:w-1/2 lg:h-full bottom-0 lg:top-0 right-0 object-cover -z-10"
               alt="Telefone antigo"
             />
           </section>

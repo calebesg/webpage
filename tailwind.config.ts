@@ -11,6 +11,12 @@ const config: Config = {
       'gradient-to-t': 'linear-gradient(0deg, #131313, #ffffff00)',
       'gradient-to-r':
         'linear-gradient(90deg, #27272a, #27272a, #27272a, #ffffff00)',
+      'gradient-to-b':
+        'linear-gradient(180deg, #27272a, #27272a, #27272a, #ffffff00)',
+      'gradient-to-bm':
+        'linear-gradient(180deg, #27272a, #27272a, #27272a, #27272a, #ffffff00)',
+      'gradient-instagram':
+        'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
     },
     maxWidth: {
       xxxl: '1920px',
