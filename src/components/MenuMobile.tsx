@@ -8,9 +8,11 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 
+import { useHeaderData } from '@/hooks'
 import { NavOptions } from './NavOptions'
 
 export function MenuMobile() {
+  const { headerStatus } = useHeaderData()
   const [isOpen, setIsOpen] = useState(false)
 
   const buttonMenuRef = useRef(null)
@@ -24,7 +26,9 @@ export function MenuMobile() {
       <button
         ref={buttonMenuRef}
         onClick={handleVisibilitMenu}
-        className="text-white lg:hidden"
+        className={`${
+          headerStatus === 'SCROLL' ? 'text-white' : 'text-zinc-800'
+        } lg:hidden`}
       >
         <List size={32} />
       </button>

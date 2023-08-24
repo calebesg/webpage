@@ -19,7 +19,7 @@ export function NavOptions({
     <nav
       className={`
         flex font-semibold gap-4
-        ${text === 'light' ? 'text-zinc-800' : 'text-zinc-800'}
+        ${text === 'light' ? 'text-white' : 'text-zinc-800'}
         ${
           direction === 'row'
             ? 'flex-row items-center'

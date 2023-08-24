@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 interface LogoProps {
-  color: 'ligth' | 'dark'
+  color: 'light' | 'dark'
 }
 
 export function Logo({ color }: LogoProps) {
@@ -9,7 +9,7 @@ export function Logo({ color }: LogoProps) {
     <Link
       className={`
         uppercase text-xl font-bold
-        ${color === 'dark' ? 'text-zinc-300' : 'text-white'}
+        ${color === 'dark' ? 'text-zinc-800' : 'text-white'}
       `}
       href="/"
     >

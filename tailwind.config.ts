@@ -22,6 +22,11 @@ const config: Config = {
       sans: ['Inter', 'sans'],
       Poppins: ['Poppins', 'Inter', 'sans'],
     },
+    extend: {
+      animation: {
+        'show-menu': 'show-menu 0.6s ease-out',
+      },
+    },
   },
   plugins: [],
 }

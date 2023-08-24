@@ -65,7 +65,7 @@ export default function Home() {
 
       <main className="font-sans">
         {/* {BANNER ==================================================} */}
-        <div className="w-full relative flex items-center justify-center bg-banner bg-cover bg-center m-auto h-[100vh] px-6 after:absolute after:inset-0 after:bg-gradient-to-t after:z-10">
+        <div className="relative w-full flex items-center justify-center bg-banner bg-cover bg-center m-auto h-[100vh] px-6 after:absolute after:inset-0 after:bg-gradient-to-t after:z-10 -z-1">
           <section className="w-full md:w-2/3 flex flex-col items-center gap-2 z-50">
             <h1 className="text-white font-Poppins font-bold text-4xl lg:text-5xl leading-tight text-center">
               Levando seu comercio para o próximo{' '}

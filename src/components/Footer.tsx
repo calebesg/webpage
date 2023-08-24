@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="bg-zinc-950 border-t-2 border-zinc-800 py-10 px-8">
       <Container>
         <div className="w-full flex justify-between">
-          <Logo color="dark" />
+          <Logo color="light" />
 
           <span className="text-zinc-400">@Copyright - 2023</span>
 
