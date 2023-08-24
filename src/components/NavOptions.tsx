@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { useHeaderData } from '@/hooks'
+
 interface NavOptionsProps {
   text: 'light' | 'dark'
   direction: 'row' | 'col'
@@ -32,7 +34,7 @@ export function NavOptions({
         className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
         href="/"
       >
-        Inicio
+        Início
       </Link>
 
       <Link

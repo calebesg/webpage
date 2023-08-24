@@ -17,7 +17,7 @@ export function Footer() {
 
           <div className="flex items-center gap-2">
             <a
-              className="text-green-400 hover:opacity-80 transition-opacity"
+              className="text-zinc-300 hover:text-green-400 transition-colors"
               href="tel:+55640000000"
               aria-label="link para nosso whatsapp"
               target="_blank"
@@ -26,7 +26,7 @@ export function Footer() {
               <WhatsappLogo size={28} />
             </a>
             <a
-              className="text-pink-400 hover:opacity-80 transition-opacity"
+              className="text-zinc-300 hover:text-pink-400 transition-colors"
               href="https://www.instagram.com"
               aria-label="link para nossa página no instagram"
               target="_blank"

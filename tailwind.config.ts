@@ -21,6 +21,7 @@ const config: Config = {
     fontFamily: {
       sans: ['Inter', 'sans'],
       Poppins: ['Poppins', 'Inter', 'sans'],
+      Logo: ['Phudu', 'cursive'],
     },
     extend: {
       animation: {

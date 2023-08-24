@@ -1,18 +1,13 @@
 import { useState, createContext, useEffect } from 'react'
 
-type LinkOption = 'DEFAULT' | 'SERVICE' | 'ABOUT' | 'CONTACT' | 'PORTIFOLIO'
 type HeaderStatus = 'INITIAL' | 'SCROLL'
 
 interface HeaderContextType {
-  activedLink: LinkOption
   headerStatus: HeaderStatus
-  changeActivedLink: (value: LinkOption) => void
 }
 
 export const HeaderContext = createContext<HeaderContextType>({
-  activedLink: 'DEFAULT',
   headerStatus: 'INITIAL',
-  changeActivedLink: () => {},
 })
 
 interface HeaderProviderProps {
@@ -20,7 +15,6 @@ interface HeaderProviderProps {
 }
 
 export function HeaderProvider({ children }: HeaderProviderProps) {
-  const [activedLink, setActivedLink] = useState<LinkOption>('DEFAULT')
   const [headerStatus, setHeaderStatus] = useState<HeaderStatus>('INITIAL')
 
   useEffect(() => {
@@ -39,18 +33,8 @@ export function HeaderProvider({ children }: HeaderProviderProps) {
     windowHeight > 50 ? setHeaderStatus('SCROLL') : setHeaderStatus('INITIAL')
   }
 
-  function changeActivedLink(newActivedLink: LinkOption) {
-    setActivedLink(newActivedLink)
-  }
-
   return (
-    <HeaderContext.Provider
-      value={{
-        activedLink,
-        changeActivedLink,
-        headerStatus,
-      }}
-    >
+    <HeaderContext.Provider value={{ headerStatus }}>
       {children}
     </HeaderContext.Provider>
   )

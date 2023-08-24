@@ -14,7 +14,7 @@ import {
   ArrowLeft,
 } from '@phosphor-icons/react'
 
-import HeaderBar from '@/components/HeaderBar'
+import Header from '@/components/Header'
 import ServiceCard from '@/components/ServiceCard'
 import Container from '@/components/Container'
 import { ParterCard } from '@/components/PartnerCard'
@@ -58,10 +58,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tavinho</title>
+        <title>F5</title>
       </Head>
 
-      <HeaderBar />
+      <Header />
 
       <main className="font-sans">
         {/* {BANNER ==================================================} */}
@@ -78,10 +78,15 @@ export default function Home() {
               um dos nossos atendentes e faça um orçamento!
             </p>
 
-            <button className="bg-green-500 text-white text-md font-bold uppercase px-10 py-4 flex items-center gap-2 rounded-lg mt-4 hover:bg-green-600 transition-colors cursor-pointer">
+            <a
+              href="//api.whatsapp.com/send?phone=62992000000"
+              className="bg-green-500 text-white text-md font-bold uppercase px-10 py-4 flex items-center gap-2 rounded-lg mt-4 hover:bg-green-600 transition-colors cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <WhatsappLogo size={24} />
               <span>Ligar Agora</span>
-            </button>
+            </a>
           </section>
         </div>
 
@@ -231,27 +236,25 @@ export default function Home() {
                     Entre em contado e faça um orçamento já!
                   </span>
 
-                  <ul className="w-full mt-8 flex flex-col gap-2">
-                    <a
-                      href="//api.whatsapp.com/send?phone=64992534500"
-                      className="flex items-center gap-2"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <WhatsappLogo size={20} />
-                      <span>(62)9920000-00</span>
-                    </a>
+                  <a
+                    href="//api.whatsapp.com/send?phone=62992000000"
+                    className="bg-white border border-green-400 w-full text-green-500 text-sm font-bold uppercase py-2 flex justify-center gap-4 rounded-lg mt-4 hover:bg-green-500 hover:text-white transition-colors cursor-pointer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <WhatsappLogo size={20} />
+                    <span>Ligar Agora</span>
+                  </a>
 
-                    <a
-                      href="mailto:institutional_email@gmail.com"
-                      className="flex items-center gap-2"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <EnvelopeSimple size={20} />
-                      <span>institutional_email@gmail.com</span>
-                    </a>
-                  </ul>
+                  <a
+                    href="mailto:institutional_email@gmail.com"
+                    className="border border-rose-400 bg-white w-full text-rose-500 text-sm font-bold uppercase py-2 flex justify-center gap-2 rounded-lg mt-2 hover:bg-rose-500 hover:text-white transition-colors cursor-pointer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <EnvelopeSimple size={20} />
+                    <span>mandar email</span>
+                  </a>
                 </div>
 
                 <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8 z-50">
@@ -265,9 +268,14 @@ export default function Home() {
                     novidades!
                   </span>
 
-                  <button className="bg-gradient-instagram px-8 py-2 rounded-full mt-6 text-white">
-                    Acesse Já
-                  </button>
+                  <a
+                    href="https://instagram.com"
+                    className="bg-gradient-instagram px-8 py-2 rounded-lg mt-6 text-white hover:brightness-105"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Acesse Já</span>
+                  </a>
                 </div>
               </div>
             </div>

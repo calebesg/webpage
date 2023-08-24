@@ -5,7 +5,7 @@ import { MenuMobile } from './MenuMobile'
 import { NavOptions } from './NavOptions'
 import { Logo } from './Logo'
 
-export default function HeaderBar() {
+export default function Header() {
   const { headerStatus } = useHeaderData()
 
   const showMenu = 'animate-show-menu bg-zinc-800 border-b-2 border-zinc-700'
