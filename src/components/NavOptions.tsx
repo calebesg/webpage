@@ -19,7 +19,7 @@ export function NavOptions({
     <nav
       className={`
         flex font-semibold gap-4
-        ${text === 'light' ? 'text-white/90' : 'text-zinc-800'}
+        ${text === 'light' ? 'text-zinc-800' : 'text-zinc-800'}
         ${
           direction === 'row'
             ? 'flex-row items-center'
@@ -29,31 +29,39 @@ export function NavOptions({
     >
       <Link
         onClick={handleClick}
-        className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
         href="/"
       >
-        Home
+        Inicio
       </Link>
+
       <Link
         onClick={handleClick}
-        className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
         href="#services"
       >
         Serviços
       </Link>
       <Link
         onClick={handleClick}
-        className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
         href="#portifolio"
       >
         Portifólio
       </Link>
       <Link
         onClick={handleClick}
-        className="px-2 sm:px-4 lg:px-6 hover:text-gray-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
         href="#about"
       >
         Sobre
+      </Link>
+      <Link
+        onClick={handleClick}
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
+        href="#contact"
+      >
+        Contato
       </Link>
     </nav>
   )

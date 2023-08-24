@@ -12,7 +12,6 @@ export function Logo({ color }: LogoProps) {
         ${color === 'dark' ? 'text-zinc-300' : 'text-white'}
       `}
       href="/"
-      passHref
     >
       Logo
     </Link>

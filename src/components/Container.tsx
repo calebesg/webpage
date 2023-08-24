@@ -3,5 +3,5 @@ interface ContainerProps {
 }
 
 export default function Container({ children }: ContainerProps) {
-  return <div className="max-w-xxxl m-auto">{children}</div>
+  return <div className="max-w-[3000px] m-auto">{children}</div>
 }

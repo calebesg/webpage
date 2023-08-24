@@ -6,8 +6,6 @@ import {
   TrendUp,
   Browsers,
   Megaphone,
-  CaretLeft,
-  CaretRight,
   Chat,
   WhatsappLogo,
   EnvelopeSimple,
@@ -65,26 +63,32 @@ export default function Home() {
 
       <HeaderBar />
 
-      <main className="pt-20 font-sans">
-        <Container>
-          {/* {BANNER ==================================================} */}
-          <div className="w-full relative flex items-center justify-center md:justify-start bg-banner bg-cover bg-center m-auto h-[74vh] max-h-[600px] px-6 -z-10 after:absolute after:inset-0 after:bg-gradient-to-t">
-            <section className="w-full md:w-[50%] z-50">
-              <h1 className="text-white font-Poppins font-bold text-4xl lg:text-5xl leading-tight text-center md:text-left">
-                Levando seu comercio para o próximo{' '}
-                <span className="text-green-400">Nível</span>
-              </h1>
+      <main className="font-sans">
+        {/* {BANNER ==================================================} */}
+        <div className="w-full relative flex items-center justify-center bg-banner bg-cover bg-center m-auto h-[100vh] px-6 after:absolute after:inset-0 after:bg-gradient-to-t after:z-10">
+          <section className="w-full md:w-2/3 flex flex-col items-center gap-2 z-50">
+            <h1 className="text-white font-Poppins font-bold text-4xl lg:text-5xl leading-tight text-center">
+              Levando seu comercio para o próximo{' '}
+              <span className="text-green-400">Nível</span>
+            </h1>
 
-              <p className="text-zinc-300 text-lg md:pr-20 text-center mt-4 leading-8 md:text-left">
-                Aqui trabalhamos em varias frentes para tornar seu emprendimento
-                vísivel para o maximo de clientes
-              </p>
-            </section>
-          </div>
+            <p className="text-zinc-300 text-lg text-center mt-4 leading-8">
+              Aqui trabalhamos em varias frentes para tornar seu emprendimento
+              vísivel para o maximo de clientes, não perca tempo e converce com
+              um dos nossos atendentes e faça um orçamento!
+            </p>
 
-          {/* {SERVIÇOS ===================================================} */}
-          <span id="services"></span>
-          <section className="px-6 py-14">
+            <button className="bg-green-500 text-white text-md font-bold uppercase px-10 py-4 flex items-center gap-2 rounded-lg mt-4 hover:bg-green-600 transition-colors cursor-pointer">
+              <WhatsappLogo size={24} />
+              <span>Ligar Agora</span>
+            </button>
+          </section>
+        </div>
+
+        {/* {SERVIÇOS ===================================================} */}
+        <span id="services"></span>
+        <section className="px-6 py-14">
+          <Container>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
                 <strong className="uppercase text-zinc-600 font-light tracking-[6px]">
@@ -122,11 +126,13 @@ export default function Home() {
                 <Megaphone className="text-green-400 mb-10" size={80} />
               </ServiceCard>
             </div>
-          </section>
+          </Container>
+        </section>
 
-          {/* {PORTIFOLIO ======================================================} */}
-          <span id="portifolio"></span>
-          <section className="px-6 py-14 bg-zinc-800 mt-8">
+        {/* {PORTIFOLIO ======================================================} */}
+        <span id="portifolio"></span>
+        <section className="px-6 py-14 bg-zinc-800 mt-8">
+          <Container>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="flex-1">
                 <strong className="uppercase text-zinc-200 font-light tracking-[6px]">
@@ -141,13 +147,13 @@ export default function Home() {
             <div className="w-full mt-16 px-4 md:px-0 navigation-wrapper relative">
               <div ref={sliderRef as any} className="keen-slider">
                 {/* {games.map(game => (
-                  <GameBanner
-                    key={game.id}
-                    adsCount={game._count.ads}
-                    bannerUrl={game.imageUrl}
-                    title={game.name}
-                  />
-                ))} */}
+                    <GameBanner
+                      key={game.id}
+                      adsCount={game._count.ads}
+                      bannerUrl={game.imageUrl}
+                      title={game.name}
+                    />
+                  ))} */}
                 <ParterCard />
                 <ParterCard />
                 <ParterCard />
@@ -178,10 +184,12 @@ export default function Home() {
                 </div>
               )}
             </div>
-          </section>
+          </Container>
+        </section>
 
-          {/* {ABOUT ============================================================} */}
-          <span id="about"></span>
+        {/* {ABOUT ============================================================} */}
+        <span id="about"></span>
+        <Container>
           <section className="relative my-28 bg-zinc-800 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
             <Image
               src={aboutImg}
@@ -201,9 +209,12 @@ export default function Home() {
               </p>
             </main>
           </section>
+        </Container>
 
-          {/* {CONTATO ==========================================================} */}
-          <section className="bg-gradient-to-b lg:bg-gradient-to-r mt-8 relative overflow-hidden">
+        {/* {CONTATO ==========================================================} */}
+        <span id="contact"></span>
+        <section className="bg-gradient-to-b lg:bg-gradient-to-r mt-8 relative overflow-hidden">
+          <Container>
             <div className="flex flex-col px-8 py-12">
               <h2 className="text-white text-2xl font-bold">
                 Como nos encontrar?
@@ -260,13 +271,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image
-              src={socialImg}
-              className="absolute w-full lg:w-1/2 lg:h-full bottom-0 lg:top-0 right-0 object-cover -z-10"
-              alt="Telefone antigo"
-            />
-          </section>
-        </Container>
+          </Container>
+          <Image
+            src={socialImg}
+            className="absolute w-full lg:w-1/2 lg:h-full bottom-0 lg:top-0 right-0 object-cover -z-10"
+            alt="Telefone antigo"
+          />
+        </section>
       </main>
 
       <Footer />

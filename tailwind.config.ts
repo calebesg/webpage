@@ -18,9 +18,6 @@ const config: Config = {
       'gradient-instagram':
         'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
     },
-    maxWidth: {
-      xxxl: '1920px',
-    },
     fontFamily: {
       sans: ['Inter', 'sans'],
       Poppins: ['Poppins', 'Inter', 'sans'],
