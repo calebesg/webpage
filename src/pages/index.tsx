@@ -23,8 +23,8 @@ import { ParterCard } from '@/components/PartnerCard'
 import { Footer } from '@/components/Footer'
 
 import aboutImg from '../../public/img/about.png'
-import contactImg from '../../public/img/contact.jpg'
 import socialImg from '../../public/img/social.jpg'
+import { GetStaticProps } from 'next'
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
@@ -272,4 +272,11 @@ export default function Home() {
       <Footer />
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+    revalidate: 60 * 60,
+  }
 }
