@@ -12,6 +12,9 @@ import {
   InstagramLogo,
   ArrowRight,
   ArrowLeft,
+  Target,
+  Users,
+  MapTrifold,
 } from '@phosphor-icons/react'
 
 import Header from '@/components/Header'
@@ -19,10 +22,6 @@ import ServiceCard from '@/components/ServiceCard'
 import Container from '@/components/Container'
 import { ParterCard } from '@/components/PartnerCard'
 import { Footer } from '@/components/Footer'
-
-import aboutImg from '../../public/img/about.png'
-import socialImg from '../../public/img/social.jpg'
-import { GetStaticProps } from 'next'
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
@@ -64,7 +63,6 @@ export default function Home() {
       <Header />
 
       <main className="font-sans">
-        {/* {BANNER ==================================================} */}
         <div className="relative w-full flex items-center justify-center bg-banner bg-cover bg-center m-auto h-[100vh] px-6 after:absolute after:inset-0 after:bg-gradient-to-t after:z-10 -z-1">
           <section className="w-full md:w-2/3 flex flex-col items-center gap-2 z-50">
             <h1 className="text-white font-Poppins font-bold text-4xl lg:text-5xl leading-tight text-center">
@@ -90,9 +88,7 @@ export default function Home() {
           </section>
         </div>
 
-        {/* {SERVIÇOS ===================================================} */}
-        <span id="services"></span>
-        <section className="px-6 py-16 lg:py-28">
+        <section id="service" className="px-6 py-16 lg:py-28">
           <Container>
             <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-zinc-800 text-center">
               O que podemos fazer por você
@@ -128,9 +124,10 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* {PORTIFOLIO ======================================================} */}
-        <span id="portifolio"></span>
-        <section className="px-6 py-14 bg-zinc-700 relative after:absolute after:inset-0 after:bg-gradient-to-t-strong after:z-0">
+        <section
+          id="portifolio"
+          className="px-6 py-14 bg-zinc-700 relative after:absolute after:inset-0 after:bg-gradient-to-t-strong after:z-0"
+        >
           <Container>
             <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-white text-center relative z-20">
               Projetos lançados
@@ -185,42 +182,54 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* {ABOUT ============================================================} */}
-        <span id="about" className="w-0 h-0"></span>
-        <Container>
-          <section className="relative lg:my-28 bg-zinc-50 w-full md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
-            <Image
-              src={aboutImg}
-              alt=""
-              className="w-52 md:w-72 shadow-xl rounded-lg lg:absolute lg:left-0 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2"
-            />
-
-            <main className="lg:self-center lg:w-2/3 px-8">
-              <h2 className="text-zinc-800 text-2xl lg:text-4xl text-center lg:text-left  font-Poppins font-bold">
-                Quem Somos.
-              </h2>
-              <p className="text-zinc-600 md:text-lg text-center lg:text-left mt-8 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Recusandae consequatur consectetur harum praesentium veritatis
-                incidunt itaque modi, voluptatum nobis ad quo illo deleniti sint
-                ipsa placeat ex commodi vero. Ratione.
-              </p>
-            </main>
-          </section>
-        </Container>
-
-        {/* {CONTATO ==========================================================} */}
-        <span id="contact"></span>
-        <section className="relative bg-zinc-700 overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-b after:lg:bg-gradient-to-r after:z-10">
+        <section id="about" className="px-6 py-16 lg:py-28">
           <Container>
-            <div className="flex flex-col px-8 py-12">
-              <h2 className="text-white text-2xl font-bold">
-                Como nos encontrar?
-              </h2>
+            <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-zinc-800 text-center">
+              Quem Somos?
+            </h2>
 
-              <div className="flex flex-col lg:flex-row gap-8 mt-8 ">
-                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8 z-50">
-                  <Chat className="text-4xl text-green-400" />
+            <div className="flex flex-col md:flex-row mt-16 gap-8">
+              <ul className="flex-1 bg-zinc-100 rounded-lg px-8">
+                <li className="py-4 border-b border-zinc-200">
+                  <strong className="font-bold font-Poppins flex items-center gap-2">
+                    <Target size={20} /> Objetivo
+                  </strong>
+
+                  <p className="w-full text-zinc-600 text-sm pl-8">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Sequi est illum delectus sit, libero dolores quia unde
+                    impedit omnis
+                  </p>
+                </li>
+
+                <li className="py-4 border-b border-zinc-200">
+                  <strong className="font-bold font-Poppins flex items-center gap-2">
+                    <Users size={20} /> Publico alvo
+                  </strong>
+
+                  <p className="w-full text-zinc-600 text-sm pl-8">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Sequi est illum delectus sit, libero dolores quia unde
+                    impedit omnis
+                  </p>
+                </li>
+
+                <li className="py-4">
+                  <strong className="font-bold font-Poppins flex items-center gap-2">
+                    <MapTrifold size={20} /> Regiões que atendemos
+                  </strong>
+
+                  <p className="w-full text-zinc-600 text-sm pl-8">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Sequi est illum delectus sit, libero dolores quia unde
+                    impedit omnis
+                  </p>
+                </li>
+              </ul>
+
+              <div className="flex flex-1 flex-col lg:flex-row gap-8">
+                <div className="bg-zinc-100 flex flex-col items-center justify-center rounded-lg p-8 z-50">
+                  <Chat className="text-5xl text-zinc-800" />
 
                   <span className="font-Poppins font-black text-xl text-zinc-700 mt-8">
                     Fale Conosco
@@ -231,7 +240,7 @@ export default function Home() {
 
                   <a
                     href="//api.whatsapp.com/send?phone=62992000000"
-                    className="bg-white border border-green-400 w-full text-green-500 text-sm font-bold uppercase py-2 flex justify-center gap-4 rounded-lg mt-4 hover:bg-green-500 hover:text-white transition-colors cursor-pointer"
+                    className="bg-zinc-800 w-full text-white shadow-sm text-sm font-bold py-3 flex justify-center gap-4 rounded-lg mt-4 hover:bg-zinc-200 transition-colors cursor-pointer"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -241,19 +250,19 @@ export default function Home() {
 
                   <a
                     href="mailto:institutional_email@gmail.com"
-                    className="border border-rose-400 bg-white w-full text-rose-500 text-sm font-bold uppercase py-2 flex justify-center gap-2 rounded-lg mt-2 hover:bg-rose-500 hover:text-white transition-colors cursor-pointer"
+                    className="bg-white w-full text-zinc-800 text-sm font-bold py-3 flex justify-center gap-2 rounded-lg mt-2 hover:bg-zinc-200 transition-colors cursor-pointer"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <EnvelopeSimple size={20} />
-                    <span>mandar email</span>
+                    <span>Enviar E-Mail</span>
                   </a>
                 </div>
 
-                <div className="bg-white flex flex-col items-center justify-center rounded-lg p-8 z-50">
-                  <InstagramLogo className="text-5xl text-pink-500" />
+                <div className="bg-zinc-100 flex flex-col items-center justify-center rounded-lg p-8 z-50">
+                  <InstagramLogo className="text-5xl text-zinc-800" />
 
-                  <span className="font-Poppins font-black text-xl text-zinc-700 mt-8">
+                  <span className="font-Poppins font-black text-xl text-zinc-800 mt-8">
                     Instagram
                   </span>
                   <span className="text-zinc-600 text-center text-sm mt-4 w-64 ">
@@ -263,7 +272,7 @@ export default function Home() {
 
                   <a
                     href="https://instagram.com"
-                    className="bg-gradient-instagram px-8 py-2 rounded-lg mt-6 text-white hover:brightness-105"
+                    className="bg-gradient-instagram px-8 py-2 w-full flex justify-center rounded-lg mt-6 text-white hover:brightness-105"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -273,22 +282,10 @@ export default function Home() {
               </div>
             </div>
           </Container>
-          <Image
-            src={socialImg}
-            className="absolute w-full lg:w-1/2 lg:h-full bottom-0 lg:top-0 right-0 object-cover z-0"
-            alt="Telefone antigo"
-          />
         </section>
       </main>
 
       <Footer />
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {},
-    revalidate: 60 * 60,
-  }
 }

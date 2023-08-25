@@ -40,7 +40,7 @@ export function NavOptions({
       <Link
         onClick={handleClick}
         className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
-        href="#services"
+        href="#service"
       >
         Serviços
       </Link>
@@ -57,13 +57,6 @@ export function NavOptions({
         href="#about"
       >
         Sobre
-      </Link>
-      <Link
-        onClick={handleClick}
-        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
-        href="#contact"
-      >
-        Contato
       </Link>
     </nav>
   )

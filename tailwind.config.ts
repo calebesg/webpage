@@ -28,6 +28,9 @@ const config: Config = {
           'linear-gradient(180deg, #27272a, #27272a, #27272a, #27272a, #ffffff00)',
         'gradient-instagram':
           'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
+        'gradient-whatsapp':
+          'linear-gradient(45deg, #1EBEA5, #1EBEA5, #00E676, #00E676, #00E676, #D0E9EA)',
+        'gradient-email': 'linear-gradient(45deg, #EE5A24, #EA2027 )',
       },
     },
   },

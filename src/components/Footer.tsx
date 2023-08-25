@@ -8,9 +8,9 @@ import Container from '@/components/Container'
 
 export function Footer() {
   return (
-    <footer className="bg-zinc-950 border-t-2 border-zinc-800 py-10 px-8">
+    <footer className="bg-zinc-950 border-t-2 border-zinc-800 py-6 px-8">
       <Container>
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between items-center">
           <Logo color="light" />
 
           <span className="text-zinc-400">@Copyright - 2023</span>
