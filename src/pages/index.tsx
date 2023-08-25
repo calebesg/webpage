@@ -191,11 +191,11 @@ export default function Home() {
             <div className="flex flex-col md:flex-row mt-16 gap-8">
               <ul className="flex-1 bg-gray-100 rounded-lg px-8">
                 <li className="py-4 border-b border-zinc-200">
-                  <strong className="font-bold font-Poppins flex items-center gap-2">
+                  <strong className="font-bold font-Poppins flex justify-center md:justify-start items-center gap-2">
                     <Target size={20} /> Objetivo
                   </strong>
 
-                  <p className="w-full text-zinc-600 text-sm pl-8">
+                  <p className="w-full text-zinc-600 text-sm md:pl-8 text-center md:text-left mt-4 md:mt-0">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Sequi est illum delectus sit, libero dolores quia unde
                     impedit omnis
@@ -203,11 +203,11 @@ export default function Home() {
                 </li>
 
                 <li className="py-4 border-b border-zinc-200">
-                  <strong className="font-bold font-Poppins flex items-center gap-2">
+                  <strong className="font-bold font-Poppins flex justify-center md:justify-start items-center gap-2">
                     <Users size={20} /> Publico alvo
                   </strong>
 
-                  <p className="w-full text-zinc-600 text-sm pl-8">
+                  <p className="w-full text-zinc-600 text-sm md:pl-8 text-center md:text-left mt-4 md:mt-0">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Sequi est illum delectus sit, libero dolores quia unde
                     impedit omnis
@@ -215,11 +215,11 @@ export default function Home() {
                 </li>
 
                 <li className="py-4">
-                  <strong className="font-bold font-Poppins flex items-center gap-2">
+                  <strong className="font-bold font-Poppins flex justify-center md:justify-start items-center gap-2">
                     <MapTrifold size={20} /> Regiões que atendemos
                   </strong>
 
-                  <p className="w-full text-zinc-600 text-sm pl-8">
+                  <p className="w-full text-zinc-600 text-sm md:pl-8 text-center md:text-left mt-4 md:mt-0">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Sequi est illum delectus sit, libero dolores quia unde
                     impedit omnis
