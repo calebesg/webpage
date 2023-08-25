@@ -228,7 +228,7 @@ export default function Home() {
               </ul>
 
               <div className="flex flex-1 flex-col lg:flex-row gap-8">
-                <div className="bg-zinc-100 flex flex-col items-center justify-center rounded-lg p-8 z-50">
+                <div className="bg-gray-100 flex flex-col items-center justify-center rounded-lg p-8 z-50">
                   <Chat className="text-5xl text-zinc-800" />
 
                   <span className="font-Poppins font-black text-xl text-zinc-700 mt-8">
