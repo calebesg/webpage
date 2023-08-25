@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import {
   TrendUp,
@@ -42,13 +42,7 @@ export default function Home() {
         slides: { perView: 2, spacing: 32 },
       },
       '(min-width: 800px)': {
-        slides: { perView: 3, spacing: 32 },
-      },
-      '(min-width: 1000px)': {
-        slides: { perView: 4, spacing: 32 },
-      },
-      '(min-width: 1200px)': {
-        slides: { perView: 4, spacing: 32 },
+        slides: { perView: 3, spacing: 64 },
       },
     },
     slides: { perView: 1, spacing: 16 },
@@ -126,20 +120,14 @@ export default function Home() {
 
         <section
           id="portifolio"
-          className="px-6 py-14 bg-zinc-700 relative after:absolute after:inset-0 after:bg-gradient-to-t-strong after:z-0"
+          className="px-6 py-16 lg:py-28 bg-zinc-700 relative after:absolute after:inset-0 after:bg-gradient-to-t-strong after:z-0"
         >
           <Container>
-            <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-white text-center relative z-20">
-              Projetos lançados
+            <h2 className="text-2xl lg:text-4xl font-thin uppercase text-white text-center relative z-20">
+              Lançamentos Recentes
             </h2>
-            <p className="w-full lg:w-3/4 text-zinc-200 text-base text-center m-auto mt-8 relative z-20">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
-              est illum delectus sit, libero dolores quia unde impedit omnis
-              animi praesentium eum quisquam perspiciatis aliquam et ipsa fugit.
-              Eos, sed.
-            </p>
 
-            <div className="w-full mt-16 px-4 md:px-0 navigation-wrapper relative">
+            <div className="w-full mt-10 lg:mt-16 md:px-0 navigation-wrapper relative">
               <div ref={sliderRef as any} className="keen-slider">
                 {/* {games.map(game => (
                     <GameBanner
@@ -153,31 +141,7 @@ export default function Home() {
                 <ParterCard />
                 <ParterCard />
                 <ParterCard />
-                <ParterCard />
-                <ParterCard />
               </div>
-              {loaded && instanceRef.current && (
-                <div className="flex justify-between gap-8 mt-8 relative z-20">
-                  <button
-                    className="flex items-center justify-center text-white/70 hover:text-white"
-                    onClick={(e: any) =>
-                      e.stopPropagation() || instanceRef.current?.prev()
-                    }
-                    aria-label="Voltar slide"
-                  >
-                    <ArrowLeft size={36} width="bold" />
-                  </button>
-                  <button
-                    className="flex items-center justify-center text-white/70 hover:text-white"
-                    onClick={(e: any) =>
-                      e.stopPropagation() || instanceRef.current?.next()
-                    }
-                    aria-label="Próximo slide"
-                  >
-                    <ArrowRight size={36} width="bold" />
-                  </button>
-                </div>
-              )}
             </div>
           </Container>
         </section>
@@ -240,7 +204,7 @@ export default function Home() {
 
                   <a
                     href="//api.whatsapp.com/send?phone=62992000000"
-                    className="bg-zinc-800 w-full text-white shadow-sm text-sm font-bold py-3 flex justify-center gap-4 rounded-lg mt-4 hover:bg-zinc-200 transition-colors cursor-pointer"
+                    className="bg-zinc-800 w-full text-white shadow-sm text-sm font-bold py-3 flex justify-center gap-4 rounded-lg mt-4 hover:bg-zinc-700 transition-colors cursor-pointer"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
