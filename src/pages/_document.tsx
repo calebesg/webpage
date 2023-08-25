@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt" className="scroll-smooth">
       <Head>
         <meta name="theme-color" content="#27272A" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

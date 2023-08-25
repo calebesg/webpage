@@ -6,11 +6,6 @@
   font-size: 1rem;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 3rem;
-}
-
 @media (min-width: 1600px) {
   :root {
     font-size: 1.25rem;

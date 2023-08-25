@@ -51,7 +51,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>F5</title>
+        <title>F5 - Feito para você</title>
+        <meta name="description" content="Levando seu comércio para Internet" />
+        <meta name="autor" content="F5" />
+        <meta
+          name="keywords"
+          content="Marketing Digital, Trafego Pago, Anuncio, Landing Page, Video Maker, Design Grafico"
+        />
       </Head>
 
       <Header />
