@@ -14,20 +14,22 @@ export default function ServiceCard({
   return (
     <div
       className={`
-        flex flex-col items-center justify-center px-8 py-20 rounded-lg w-full
-        ${theme === 'light' ? 'bg-white' : 'bg-zinc-800'}
+        flex justify-center p-8 rounded-lg w-full gap-4
+        ${theme === 'light' ? 'bg-white' : 'bg-zinc-50'}
       `}
     >
       {children}
-      <strong
-        className={`
-          font-Poppins font-medium text-2xl
-          ${theme === 'light' ? 'text-zinc-700' : 'text-zinc-100'}
-        `}
-      >
-        {placeholder}
-      </strong>
-      <span className="text-zinc-300 text-center px-4 mt-4">{description}</span>
+      <div>
+        <strong
+          className={`
+            font-Poppins font-bold text-lg
+            ${theme === 'light' ? 'text-zinc-700' : 'text-zinc-700'}
+          `}
+        >
+          {placeholder}
+        </strong>
+        <span className="text-zinc-600 text-sm block">{description}</span>
+      </div>
     </div>
   )
 }

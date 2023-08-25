@@ -30,7 +30,7 @@ export function MenuMobile() {
           headerStatus === 'SCROLL' ? 'text-white' : 'text-zinc-800'
         } lg:hidden`}
       >
-        <List size={32} />
+        <List className="text-4xl" />
       </button>
 
       <Drawer

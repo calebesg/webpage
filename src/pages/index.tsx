@@ -92,43 +92,37 @@ export default function Home() {
 
         {/* {SERVIÇOS ===================================================} */}
         <span id="services"></span>
-        <section className="px-6 py-14">
+        <section className="px-6 py-16 lg:py-28">
           <Container>
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="flex-1">
-                <strong className="uppercase text-zinc-600 font-light tracking-[6px]">
-                  Serviços
-                </strong>
-                <h2 className="text-4xl font-Poppins font-bold text-zinc-700">
-                  O que podemos fazer por você
-                </h2>
-              </div>
-              <p className="w-full md:w-[42%] text-zinc-600 text-lg font-semibold">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
-                est illum delectus sit, libero dolores quia unde impedit omnis
-                animi praesentium eum quisquam perspiciatis aliquam et ipsa
-                fugit. Eos, sed.
-              </p>
-            </div>
+            <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-zinc-800 text-center">
+              O que podemos fazer por você
+            </h2>
 
-            <div className="flex flex-col md:flex-row justify-between gap-10 mt-14">
+            <p className="w-full lg:w-3/4 text-zinc-600 text-base text-center m-auto mt-8">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
+              est illum delectus sit, libero dolores quia unde impedit omnis
+              animi praesentium eum quisquam perspiciatis aliquam et ipsa fugit.
+              Eos, sed.
+            </p>
+
+            <div className="flex flex-col md:flex-row justify-between gap-6 lg:gap-10 mt-14">
               <ServiceCard
-                placeholder="Trafico"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi est illum"
+                placeholder="Trafego"
+                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit"
               >
-                <TrendUp className="text-green-400 mb-10" size={80} />
+                <TrendUp className="text-zinc-800" size={60} />
               </ServiceCard>
               <ServiceCard
                 placeholder="Landing Page"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi est illum"
+                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit"
               >
-                <Browsers className="text-green-400 mb-10" size={80} />
+                <Browsers className="text-zinc-800" size={60} />
               </ServiceCard>
               <ServiceCard
                 placeholder="Marketing"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi est illum"
+                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit"
               >
-                <Megaphone className="text-green-400 mb-10" size={80} />
+                <Megaphone className="text-zinc-800" size={60} />
               </ServiceCard>
             </div>
           </Container>
@@ -136,18 +130,17 @@ export default function Home() {
 
         {/* {PORTIFOLIO ======================================================} */}
         <span id="portifolio"></span>
-        <section className="px-6 py-14 bg-zinc-800 mt-8">
+        <section className="px-6 py-14 bg-zinc-700 relative after:absolute after:inset-0 after:bg-gradient-to-t-strong after:z-0">
           <Container>
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="flex-1">
-                <strong className="uppercase text-zinc-200 font-light tracking-[6px]">
-                  <p>portifólio</p>
-                </strong>
-                <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-white">
-                  Projetos lançados
-                </h2>
-              </div>
-            </div>
+            <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-white text-center relative z-20">
+              Projetos lançados
+            </h2>
+            <p className="w-full lg:w-3/4 text-zinc-200 text-base text-center m-auto mt-8 relative z-20">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
+              est illum delectus sit, libero dolores quia unde impedit omnis
+              animi praesentium eum quisquam perspiciatis aliquam et ipsa fugit.
+              Eos, sed.
+            </p>
 
             <div className="w-full mt-16 px-4 md:px-0 navigation-wrapper relative">
               <div ref={sliderRef as any} className="keen-slider">
@@ -167,7 +160,7 @@ export default function Home() {
                 <ParterCard />
               </div>
               {loaded && instanceRef.current && (
-                <div className="flex justify-between gap-8 mt-8">
+                <div className="flex justify-between gap-8 mt-8 relative z-20">
                   <button
                     className="flex items-center justify-center text-white/70 hover:text-white"
                     onClick={(e: any) =>
@@ -193,20 +186,20 @@ export default function Home() {
         </section>
 
         {/* {ABOUT ============================================================} */}
-        <span id="about"></span>
+        <span id="about" className="w-0 h-0"></span>
         <Container>
-          <section className="relative my-28 bg-zinc-800 w-11/12 md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
+          <section className="relative lg:my-28 bg-zinc-50 w-full md:w-3/4 lg:w-2/3 min-h-[30rem] m-auto lg:ml-auto lg:mr-8 py-16 rounded-lg flex flex-col lg:flex-row lg:justify-end items-center gap-14">
             <Image
               src={aboutImg}
               alt=""
-              className="w-52 md:w-72 rounded-lg lg:absolute lg:left-0 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2"
+              className="w-52 md:w-72 shadow-xl rounded-lg lg:absolute lg:left-0 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2"
             />
 
-            <main className="lg:self-center lg:w-2/3 px-10">
-              <h2 className="text-white text-2xl lg:text-4xl text-center lg:text-left  font-Poppins font-bold">
+            <main className="lg:self-center lg:w-2/3 px-8">
+              <h2 className="text-zinc-800 text-2xl lg:text-4xl text-center lg:text-left  font-Poppins font-bold">
                 Quem Somos.
               </h2>
-              <p className="text-zinc-300 md:text-lg text-center lg:text-left mt-8 leading-relaxed">
+              <p className="text-zinc-600 md:text-lg text-center lg:text-left mt-8 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Recusandae consequatur consectetur harum praesentium veritatis
                 incidunt itaque modi, voluptatum nobis ad quo illo deleniti sint
@@ -218,7 +211,7 @@ export default function Home() {
 
         {/* {CONTATO ==========================================================} */}
         <span id="contact"></span>
-        <section className="bg-gradient-to-b lg:bg-gradient-to-r mt-8 relative overflow-hidden">
+        <section className="relative bg-zinc-700 overflow-hidden after:absolute after:inset-0 after:bg-gradient-to-b after:lg:bg-gradient-to-r after:z-10">
           <Container>
             <div className="flex flex-col px-8 py-12">
               <h2 className="text-white text-2xl font-bold">
@@ -282,7 +275,7 @@ export default function Home() {
           </Container>
           <Image
             src={socialImg}
-            className="absolute w-full lg:w-1/2 lg:h-full bottom-0 lg:top-0 right-0 object-cover -z-10"
+            className="absolute w-full lg:w-1/2 lg:h-full bottom-0 lg:top-0 right-0 object-cover z-0"
             alt="Telefone antigo"
           />
         </section>
