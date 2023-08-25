@@ -189,7 +189,7 @@ export default function Home() {
             </h2>
 
             <div className="flex flex-col md:flex-row mt-16 gap-8">
-              <ul className="flex-1 bg-zinc-100 rounded-lg px-8">
+              <ul className="flex-1 bg-gray-100 rounded-lg px-8">
                 <li className="py-4 border-b border-zinc-200">
                   <strong className="font-bold font-Poppins flex items-center gap-2">
                     <Target size={20} /> Objetivo
