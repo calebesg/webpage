@@ -11,7 +11,7 @@ export function ParterCard() {
         FH Software
       </span>
 
-      <p className="text-center font-sans text-zinc-300 text-xs mt-2">
+      <p className="text-center font-sans text-zinc-300 text-sm mt-2">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos voluptate
         praesentium quos error.
       </p>

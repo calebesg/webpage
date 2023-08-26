@@ -29,6 +29,7 @@ export function MenuMobile() {
         className={`${
           headerStatus === 'SCROLL' ? 'text-white' : 'text-zinc-800'
         } lg:hidden`}
+        title="Abrir menu"
       >
         <List className="text-4xl" />
       </button>
