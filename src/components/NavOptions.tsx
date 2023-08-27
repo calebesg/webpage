@@ -31,7 +31,7 @@ export function NavOptions({
         to="main"
         onClick={handleClick}
         smooth={true}
-        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors cursor-pointer"
       >
         Início
       </Link>
@@ -41,7 +41,7 @@ export function NavOptions({
         activeClass="active"
         onClick={handleClick}
         smooth={true}
-        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors cursor-pointer"
       >
         Serviços
       </Link>
@@ -49,7 +49,7 @@ export function NavOptions({
         to="portifolio"
         onClick={handleClick}
         smooth={true}
-        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors cursor-pointer"
       >
         Portifólio
       </Link>
@@ -57,7 +57,7 @@ export function NavOptions({
         to="about"
         onClick={handleClick}
         smooth={true}
-        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
+        className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors cursor-pointer"
       >
         Sobre
       </Link>

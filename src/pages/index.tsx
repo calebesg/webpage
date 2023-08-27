@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Element } from 'react-scroll'
 
 import Header from '@/components/Header'
 import { Footer } from '@/components/Footer'

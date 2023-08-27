@@ -1,11 +1,12 @@
+import { useSinglePrismicDocument } from '@prismicio/react'
 import {
   EnvelopeSimple,
   InstagramLogo,
   WhatsappLogo,
 } from '@phosphor-icons/react'
+
 import { Logo } from './Logo'
 import Container from '@/components/Container'
-import { useSinglePrismicDocument } from '@prismicio/react'
 import { useUtilData } from '@/hooks'
 
 export function Footer() {
