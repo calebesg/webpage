@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { Element } from 'react-scroll'
 import { useKeenSlider } from 'keen-slider/react'
 import {
   useSinglePrismicDocument,
@@ -36,11 +37,9 @@ export function Portifolio() {
     slides: { perView: 1, spacing: 16 },
   })
 
-  useEffect(() => console.log(cardsData), [cardsData])
-
   return (
-    <section
-      id="portifolio"
+    <Element
+      name="portifolio"
       className="px-6 py-16 lg:pb-28 lg:pt-20 bg-zinc-700 relative after:absolute after:inset-0 after:bg-gradient-to-t-strong after:z-0"
     >
       <Container>
@@ -64,6 +63,6 @@ export function Portifolio() {
           </div>
         </div>
       </Container>
-    </section>
+    </Element>
   )
 }

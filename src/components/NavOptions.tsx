@@ -1,6 +1,4 @@
-import Link from 'next/link'
-
-import { useHeaderData } from '@/hooks'
+import { Link } from 'react-scroll'
 
 interface NavOptionsProps {
   text: 'light' | 'dark'
@@ -30,31 +28,36 @@ export function NavOptions({
       `}
     >
       <Link
+        to="main"
         onClick={handleClick}
+        smooth={true}
         className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
-        href="/"
       >
         Início
       </Link>
 
       <Link
+        to="service"
+        activeClass="active"
         onClick={handleClick}
+        smooth={true}
         className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
-        href="#service"
       >
         Serviços
       </Link>
       <Link
+        to="portifolio"
         onClick={handleClick}
+        smooth={true}
         className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
-        href="#portifolio"
       >
         Portifólio
       </Link>
       <Link
+        to="about"
         onClick={handleClick}
+        smooth={true}
         className="px-2 sm:px-4 lg:px-6 hover:text-green-400 transition-colors"
-        href="#about"
       >
         Sobre
       </Link>

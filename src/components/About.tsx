@@ -1,3 +1,4 @@
+import { useSinglePrismicDocument } from '@prismicio/react'
 import {
   Chat,
   EnvelopeSimple,
@@ -7,9 +8,9 @@ import {
   Users,
   WhatsappLogo,
 } from '@phosphor-icons/react'
+import { Element } from 'react-scroll'
 
 import Container from './Container'
-import { useSinglePrismicDocument } from '@prismicio/react'
 import { useUtilData } from '@/hooks'
 
 export function About() {
@@ -17,7 +18,7 @@ export function About() {
   const { email, socialUrl, whatsapp } = useUtilData()
 
   return (
-    <section id="about" className="px-6 py-16 lg:py-28">
+    <Element name="about" className="px-6 py-16 lg:py-28">
       {document && (
         <Container>
           <h2 className="text-3xl lg:text-4xl font-Poppins font-bold text-zinc-800 text-center">
@@ -99,7 +100,7 @@ export function About() {
                 </span>
 
                 <a
-                  href="https://instagram.com"
+                  href={socialUrl}
                   className="bg-gradient-instagram px-8 py-2 w-full flex justify-center rounded-lg mt-8 text-white hover:brightness-105"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -111,6 +112,6 @@ export function About() {
           </div>
         </Container>
       )}
-    </section>
+    </Element>
   )
 }

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Element } from 'react-scroll'
 
 import Header from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -22,7 +23,7 @@ export default function Home() {
 
       <Header />
 
-      <main className="font-sans">
+      <main id="main" className="font-sans">
         <Banner />
         <Service />
         <Portifolio />
