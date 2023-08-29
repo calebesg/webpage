@@ -7,11 +7,9 @@ import {
 
 import { Logo } from './Logo'
 import Container from '@/components/Container'
-import { useUtilData } from '@/hooks'
 
 export function Footer() {
   const [document] = useSinglePrismicDocument('footer')
-  const { email, socialUrl, whatsapp } = useUtilData()
 
   return (
     <footer className="bg-zinc-800 py-6 px-8">
@@ -25,7 +23,7 @@ export function Footer() {
             <ul className="flex justify-center items-center gap-4 mt-4">
               <a
                 className="text-zinc-300 flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 hover:bg-zinc-950 transition-colors"
-                href={`//api.whatsapp.com/send?phone=${whatsapp}`}
+                href={`//api.whatsapp.com/send?phone=`}
                 aria-label="link para nosso whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -34,7 +32,7 @@ export function Footer() {
               </a>
               <a
                 className="text-zinc-300 flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 hover:bg-zinc-950 transition-colors"
-                href={`mailto:${email}`}
+                href={`mailto:`}
                 aria-label="email para contato"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -44,7 +42,7 @@ export function Footer() {
 
               <a
                 className="text-zinc-300 flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 hover:bg-zinc-950 transition-colors"
-                href={socialUrl}
+                href=""
                 aria-label="link para nossa página no instagram"
                 target="_blank"
                 rel="noopener noreferrer"

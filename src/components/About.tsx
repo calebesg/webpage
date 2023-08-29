@@ -11,11 +11,9 @@ import {
 import { Element } from 'react-scroll'
 
 import Container from './Container'
-import { useUtilData } from '@/hooks'
 
 export function About() {
   const [document] = useSinglePrismicDocument('contact')
-  const { email, socialUrl, whatsapp } = useUtilData()
 
   return (
     <Element name="about" className="px-6 py-16 lg:py-28">
@@ -69,7 +67,7 @@ export function About() {
                 </span>
 
                 <a
-                  href={`//api.whatsapp.com/send?phone=${whatsapp}`}
+                  href={`//api.whatsapp.com/send?phone=`}
                   className="bg-zinc-800 w-full text-white shadow-sm text-sm font-bold py-3 flex justify-center gap-4 rounded-lg mt-8 hover:opacity-80 transition-opacity cursor-pointer"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -79,7 +77,7 @@ export function About() {
                 </a>
 
                 <a
-                  href={`mailto:${email}`}
+                  href={`mailto:`}
                   className="bg-white w-full text-zinc-800 text-sm font-bold py-3 flex justify-center gap-2 rounded-lg mt-3 hover:opacity-80 transition-opacity  cursor-pointer"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -100,7 +98,7 @@ export function About() {
                 </span>
 
                 <a
-                  href={socialUrl}
+                  href=""
                   className="bg-gradient-instagram px-8 py-2 w-full flex justify-center rounded-lg mt-8 text-white hover:brightness-105"
                   target="_blank"
                   rel="noopener noreferrer"
