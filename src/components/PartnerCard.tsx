@@ -8,10 +8,10 @@ interface ParterCardProps {
 
 export function ParterCard({ description, imageData, title }: ParterCardProps) {
   return (
-    <div className="z-10 flex flex-col items-center flex-1">
+    <div className="z-10 flex flex-col items-center flex-1 h-72">
       <img
         src={imageData.url}
-        className="object-cover object-top w-full h-52 md:h-48 lg:h-56 rounded-md "
+        className="object-cover object-top w-full h-2/3 rounded-md "
         alt={imageData.alt}
       />
 
