@@ -1,10 +1,4 @@
-import { useState } from 'react'
 import { Element } from 'react-scroll'
-import { useKeenSlider } from 'keen-slider/react'
-import {
-  useSinglePrismicDocument,
-  useAllPrismicDocumentsByType,
-} from '@prismicio/react'
 
 import Container from './Container'
 import { ParterCard } from './PartnerCard'
@@ -15,30 +9,6 @@ interface PortifolioProps {
 }
 
 export function Portifolio({ data }: PortifolioProps) {
-  // const [loaded, setLoaded] = useState(false)
-  // const [currentSlide, setCurrentSlide] = useState(0)
-  const [sliderRef] = useKeenSlider<HTMLDialogElement>({
-    initial: 0,
-    slideChanged(slider) {
-      // setCurrentSlide(slider.track.details.rel)
-    },
-    created() {
-      // setLoaded(true)
-    },
-    breakpoints: {
-      '(min-width: 400px)': {
-        slides: { perView: 1, spacing: 32 },
-      },
-      '(min-width: 600px)': {
-        slides: { perView: 2, spacing: 32 },
-      },
-      '(min-width: 800px)': {
-        slides: { perView: 3, spacing: 64 },
-      },
-    },
-    slides: { perView: 1, spacing: 16 },
-  })
-
   return (
     <Element
       name="portifolio"
@@ -49,19 +19,17 @@ export function Portifolio({ data }: PortifolioProps) {
           {data.title}
         </h2>
 
-        <div className="w-full mt-10 lg:mt-16 md:px-0 navigation-wrapper relative">
-          <div ref={sliderRef as any} className="keen-slider">
-            {data.cards.map((card) => {
-              return (
-                <ParterCard
-                  key={card.title}
-                  description={card.text}
-                  title={card.title}
-                  imageData={card.image}
-                />
-              )
-            })}
-          </div>
+        <div className="w-full mt-10 lg:mt-16 md:px-0 flex place-items-stretch flex-col md:flex-row gap-16 md:gap-4 lg:gap-8 xl:gap-16">
+          {data.cards.map((card) => {
+            return (
+              <ParterCard
+                key={card.title}
+                description={card.text}
+                title={card.title}
+                imageData={card.image}
+              />
+            )
+          })}
         </div>
       </Container>
     </Element>

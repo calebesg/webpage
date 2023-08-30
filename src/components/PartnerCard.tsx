@@ -1,4 +1,4 @@
-import { ImageType } from '@/contexts'
+import { ImageType } from '@/types/image'
 
 interface ParterCardProps {
   imageData: ImageType
@@ -8,10 +8,10 @@ interface ParterCardProps {
 
 export function ParterCard({ description, imageData, title }: ParterCardProps) {
   return (
-    <div className="relative keen-slider__slide z-10 flex flex-col items-center lg:mx-4">
+    <div className="z-10 flex flex-col items-center flex-1">
       <img
         src={imageData.url}
-        className="object-cover w-full h-52 rounded-md "
+        className="object-cover object-top w-full h-52 md:h-48 lg:h-56 rounded-md "
         alt={imageData.alt}
       />
 
