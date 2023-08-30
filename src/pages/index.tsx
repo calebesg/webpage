@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { useSinglePrismicDocument } from '@prismicio/react'
 
 import Header from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -14,12 +13,14 @@ import { client } from '@/libs/prismic'
 import { ServiceData } from '@/types/service'
 import { PortifolioData } from '@/types/portifolio'
 import { AboutData } from '@/types/about'
+import { FooterData } from '@/types/footer'
 
 type Repo = {
   banner: BannerData
   service: ServiceData
   portifolio: PortifolioData
   about: AboutData
+  footer: FooterData
 }
 
 export default function Home({
@@ -46,7 +47,7 @@ export default function Home({
         <About data={data.about} />
       </main>
 
-      <Footer />
+      <Footer data={data.footer} />
     </>
   )
 }
@@ -61,6 +62,7 @@ export const getStaticProps: GetStaticProps<{
     portifolioStaticResponse,
     portifolioDinamicResponse,
     aboutResponse,
+    footerResponse,
   ] = await Promise.all([
     client.getSingle('home'),
     client.getSingle('global'),
@@ -68,6 +70,7 @@ export const getStaticProps: GetStaticProps<{
     client.getSingle('portifolioheader'),
     client.getAllByType('portifoliocards'),
     client.getSingle('contact'),
+    client.getSingle('footer'),
   ])
 
   const banner: BannerData = {
@@ -139,6 +142,16 @@ export const getStaticProps: GetStaticProps<{
     },
   }
 
+  const footer: FooterData = {
+    text: footerResponse.data.text,
+    copy: footerResponse.data.copy,
+    info: {
+      whatsapp: globalResponse.data.whatsapp,
+      email: globalResponse.data.email,
+      social: globalResponse.data.social_link,
+    },
+  }
+
   return {
     props: {
       data: {
@@ -146,6 +159,7 @@ export const getStaticProps: GetStaticProps<{
         service,
         portifolio,
         about,
+        footer,
       },
     },
   }
