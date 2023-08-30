@@ -12,11 +12,14 @@ import { About } from '@/components/About'
 import { BannerData } from '@/types/banner'
 import { client } from '@/libs/prismic'
 import { ServiceData } from '@/types/service'
-import { text } from 'stream/consumers'
+import { PortifolioData } from '@/types/portifolio'
+import { AboutData } from '@/types/about'
 
 type Repo = {
   banner: BannerData
   service: ServiceData
+  portifolio: PortifolioData
+  about: AboutData
 }
 
 export default function Home({
@@ -39,8 +42,8 @@ export default function Home({
       <main id="main" className="font-sans">
         <Banner data={data.banner} />
         <Service data={data.service} />
-        {/* <Portifolio /> */}
-        {/* <About /> */}
+        <Portifolio data={data.portifolio} />
+        <About data={data.about} />
       </main>
 
       <Footer />
@@ -51,10 +54,20 @@ export default function Home({
 export const getStaticProps: GetStaticProps<{
   data: Repo
 }> = async () => {
-  const [bannerResponse, globalResponse, serviceResponse] = await Promise.all([
+  const [
+    bannerResponse,
+    globalResponse,
+    serviceResponse,
+    portifolioStaticResponse,
+    portifolioDinamicResponse,
+    aboutResponse,
+  ] = await Promise.all([
     client.getSingle('home'),
     client.getSingle('global'),
     client.getSingle('servicesection'),
+    client.getSingle('portifolioheader'),
+    client.getAllByType('portifoliocards'),
+    client.getSingle('contact'),
   ])
 
   const banner: BannerData = {
@@ -81,28 +94,49 @@ export const getStaticProps: GetStaticProps<{
     },
   }
 
-  const emptyBanner = {
-    imageBanner: { alt: '', url: '' },
-    text: '',
-    title: '',
-    whatsapp: 0,
+  const cards = portifolioDinamicResponse.map((res) => {
+    return {
+      image: {
+        url: res.data.portifolio_image.url,
+        alt: res.data.portifolio_image.alt,
+      },
+      title: res.data.portifolio_card_title,
+      text: res.data.portifolio_card_text,
+    }
+  })
+
+  const portifolio: PortifolioData = {
+    title: portifolioStaticResponse.data.portifoliotitle,
+    cards,
   }
 
-  const emptyService = {
-    card1: {
-      text: '',
-      title: '',
+  const about: AboutData = {
+    title: aboutResponse.data.section_title,
+    info: {
+      objective: {
+        title: aboutResponse.data.objective_title,
+        text: aboutResponse.data.objective_text,
+      },
+      public: {
+        title: aboutResponse.data.public_title,
+        text: aboutResponse.data.public_text,
+      },
+      target: {
+        title: aboutResponse.data.region_target_title,
+        text: aboutResponse.data.region_target_text,
+      },
     },
-    card2: {
-      text: '',
-      title: '',
+    contact: {
+      title: aboutResponse.data.contact_card_title,
+      text: aboutResponse.data.contact_card_text,
+      whatsapp: globalResponse.data.whatsapp,
+      email: globalResponse.data.email,
     },
-    card3: {
-      text: '',
-      title: '',
+    social: {
+      title: aboutResponse.data.social_card_title,
+      text: aboutResponse.data.social_card_text,
+      url: globalResponse.data.social_link,
     },
-    text: '',
-    title: '',
   }
 
   return {
@@ -110,6 +144,8 @@ export const getStaticProps: GetStaticProps<{
       data: {
         banner,
         service,
+        portifolio,
+        about,
       },
     },
   }

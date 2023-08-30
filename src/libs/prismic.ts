@@ -21,5 +21,9 @@ export const client = prismic.createClient(prismicRepoURL, {
       type: 'portifoliocards',
       path: '/',
     },
+    {
+      type: 'contact',
+      path: '/',
+    },
   ],
 })

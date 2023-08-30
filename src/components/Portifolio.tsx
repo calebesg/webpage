@@ -8,20 +8,22 @@ import {
 
 import Container from './Container'
 import { ParterCard } from './PartnerCard'
+import { PortifolioData } from '@/types/portifolio'
 
-export function Portifolio() {
-  const [document] = useSinglePrismicDocument('portifolioheader')
-  const [cardsData] = useAllPrismicDocumentsByType('portifoliocards')
+interface PortifolioProps {
+  data: PortifolioData
+}
 
-  const [loaded, setLoaded] = useState(false)
-  const [currentSlide, setCurrentSlide] = useState(0)
+export function Portifolio({ data }: PortifolioProps) {
+  // const [loaded, setLoaded] = useState(false)
+  // const [currentSlide, setCurrentSlide] = useState(0)
   const [sliderRef] = useKeenSlider<HTMLDialogElement>({
     initial: 0,
     slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
+      // setCurrentSlide(slider.track.details.rel)
     },
     created() {
-      setLoaded(true)
+      // setLoaded(true)
     },
     breakpoints: {
       '(min-width: 400px)': {
@@ -44,22 +46,21 @@ export function Portifolio() {
     >
       <Container>
         <h2 className="text-2xl lg:text-4xl font-thin uppercase text-white text-center relative z-20">
-          {document && document.data.portifoliotitle}
+          {data.title}
         </h2>
 
         <div className="w-full mt-10 lg:mt-16 md:px-0 navigation-wrapper relative">
           <div ref={sliderRef as any} className="keen-slider">
-            {cardsData &&
-              cardsData.map((card) => {
-                return (
-                  <ParterCard
-                    key={card.id}
-                    description={card.data.portifolio_card_text}
-                    title={card.data.portifolio_card_title}
-                    imageData={card.data.portifolio_image}
-                  />
-                )
-              })}
+            {data.cards.map((card) => {
+              return (
+                <ParterCard
+                  key={card.title}
+                  description={card.text}
+                  title={card.title}
+                  imageData={card.image}
+                />
+              )
+            })}
           </div>
         </div>
       </Container>
